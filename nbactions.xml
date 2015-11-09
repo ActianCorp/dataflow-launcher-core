@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-secondary</actionName>
+            <displayName>secondary</displayName>
+            <goals>
+                <goal>exec:java</goal>
+            </goals>
+            <properties>
+                <server.type>SECONDARY</server.type>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-primary</actionName>
+            <displayName>primary</displayName>
+            <goals>
+                <goal>exec:java</goal>
+            </goals>
+            <properties>
+                <server.type>PRIMARY</server.type>
+            </properties>
+        </action>
+    </actions>

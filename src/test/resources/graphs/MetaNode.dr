@@ -1,0 +1,659 @@
+{
+  "settings" : {
+    "name" : "scratch",
+    "relativePath" : "scratch"
+  },
+  "operators" : {
+    "Node 3" : {
+      "operator" : {
+        "@type" : "readFromJDBC",
+        "dataQuery" : "select * from echo",
+        "discoverOutputAtRuntime" : false,
+        "errorAction" : "ABORT",
+        "fetchSize" : 1000,
+        "jdbcConnector" : {
+          "driverName" : "com.ingres.jdbc.IngresDriver",
+          "user" : "aauser",
+          "url" : "jdbc:ingres://localhost:VW7/echo",
+          "tableName" : null,
+          "hostNames" : [ "localhost" ],
+          "connectionFactory" : {
+            "@type" : "com.pervasive.datarush.jdbc.DefaultConnectionFactory"
+          },
+          "delimiter" : "\"",
+          "password" : {
+            "encryptedText" : "WFImwchw34o=",
+            "provider" : "default"
+          }
+        },
+        "outputType" : {
+          "type" : "record",
+          "representation" : "DENSE_BASE_NULL",
+          "fields" : [ {
+            "channel" : {
+              "type" : "string"
+            }
+          }, {
+            "unique_id" : {
+              "type" : "string"
+            }
+          }, {
+            "transaction_dttm" : {
+              "type" : "timestamp"
+            }
+          }, {
+            "inception_dttm" : {
+              "type" : "date"
+            }
+          }, {
+            "forename" : {
+              "type" : "string"
+            }
+          }, {
+            "surname" : {
+              "type" : "string"
+            }
+          }, {
+            "dob" : {
+              "type" : "date"
+            }
+          }, {
+            "marital_status" : {
+              "type" : "string"
+            }
+          }, {
+            "occupation_type" : {
+              "type" : "string"
+            }
+          }, {
+            "employers_business" : {
+              "type" : "string"
+            }
+          }, {
+            "licence_type" : {
+              "type" : "string"
+            }
+          }, {
+            "licence_date" : {
+              "type" : "date"
+            }
+          }, {
+            "main_user" : {
+              "type" : "string"
+            }
+          }, {
+            "garaged_postcode" : {
+              "type" : "string"
+            }
+          }, {
+            "ncd_years" : {
+              "type" : "int"
+            }
+          }, {
+            "class_of_use" : {
+              "type" : "string"
+            }
+          }, {
+            "other_vehicles" : {
+              "type" : "int"
+            }
+          }, {
+            "permanent_res" : {
+              "type" : "string"
+            }
+          }, {
+            "declined" : {
+              "type" : "string"
+            }
+          }, {
+            "vol_xs" : {
+              "type" : "double"
+            }
+          }, {
+            "num_add_drivers" : {
+              "type" : "int"
+            }
+          }, {
+            "registration_number" : {
+              "type" : "string"
+            }
+          }, {
+            "owner_type" : {
+              "type" : "string"
+            }
+          }, {
+            "manufacture_dttm" : {
+              "type" : "int"
+            }
+          }, {
+            "purchase_dttm" : {
+              "type" : "date"
+            }
+          }, {
+            "value" : {
+              "type" : "double"
+            }
+          }, {
+            "mileage" : {
+              "type" : "int"
+            }
+          }, {
+            "parking_type" : {
+              "type" : "string"
+            }
+          }, {
+            "registered_keeper" : {
+              "type" : "string"
+            }
+          }, {
+            "claims" : {
+              "type" : "int"
+            }
+          }, {
+            "convictions" : {
+              "type" : "int"
+            }
+          } ]
+        },
+        "parallelismDisabled" : false,
+        "parameterQuery" : null,
+        "parameters" : null,
+        "sqlWarningLimit" : 100
+      }
+    },
+    "Metanode" : {
+      "operator" : {
+        "@type" : "openComposite",
+        "inputFactories" : [ ],
+        "outputFactories" : [ ],
+        "operators" : {
+          "Database Reader" : {
+            "operator" : {
+              "@type" : "readFromJDBC",
+              "dataQuery" : "select * from echo",
+              "discoverOutputAtRuntime" : false,
+              "errorAction" : "ABORT",
+              "fetchSize" : 1000,
+              "jdbcConnector" : {
+                "driverName" : "com.ingres.jdbc.IngresDriver",
+                "user" : "aauser",
+                "url" : "jdbc:ingres://localhost:VW7/echo",
+                "tableName" : null,
+                "hostNames" : [ "localhost" ],
+                "connectionFactory" : {
+                  "@type" : "com.pervasive.datarush.jdbc.DefaultConnectionFactory"
+                },
+                "delimiter" : "\"",
+                "password" : {
+                  "encryptedText" : "WFImwchw34o=",
+                  "provider" : "default"
+                }
+              },
+              "outputType" : {
+                "type" : "record",
+                "representation" : "DENSE_BASE_NULL",
+                "fields" : [ {
+                  "channel" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "unique_id" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "transaction_dttm" : {
+                    "type" : "timestamp"
+                  }
+                }, {
+                  "inception_dttm" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "forename" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "surname" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "dob" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "marital_status" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "occupation_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "employers_business" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "licence_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "licence_date" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "main_user" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "garaged_postcode" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "ncd_years" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "class_of_use" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "other_vehicles" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "permanent_res" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "declined" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "vol_xs" : {
+                    "type" : "double"
+                  }
+                }, {
+                  "num_add_drivers" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "registration_number" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "owner_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "manufacture_dttm" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "purchase_dttm" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "value" : {
+                    "type" : "double"
+                  }
+                }, {
+                  "mileage" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "parking_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "registered_keeper" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "claims" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "convictions" : {
+                    "type" : "int"
+                  }
+                } ]
+              },
+              "parallelismDisabled" : false,
+              "parameterQuery" : null,
+              "parameters" : null,
+              "sqlWarningLimit" : 100
+            }
+          },
+          "Database Reader_2" : {
+            "operator" : {
+              "@type" : "readFromJDBC",
+              "dataQuery" : "select * from echo",
+              "discoverOutputAtRuntime" : false,
+              "errorAction" : "ABORT",
+              "fetchSize" : 1000,
+              "jdbcConnector" : {
+                "driverName" : "com.ingres.jdbc.IngresDriver",
+                "user" : "aauser",
+                "url" : "jdbc:ingres://localhost:VW7/echo",
+                "tableName" : null,
+                "hostNames" : [ "localhost" ],
+                "connectionFactory" : {
+                  "@type" : "com.pervasive.datarush.jdbc.DefaultConnectionFactory"
+                },
+                "delimiter" : "\"",
+                "password" : {
+                  "encryptedText" : "WFImwchw34o=",
+                  "provider" : "default"
+                }
+              },
+              "outputType" : {
+                "type" : "record",
+                "representation" : "DENSE_BASE_NULL",
+                "fields" : [ {
+                  "channel" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "unique_id" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "transaction_dttm" : {
+                    "type" : "timestamp"
+                  }
+                }, {
+                  "inception_dttm" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "forename" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "surname" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "dob" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "marital_status" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "occupation_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "employers_business" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "licence_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "licence_date" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "main_user" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "garaged_postcode" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "ncd_years" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "class_of_use" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "other_vehicles" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "permanent_res" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "declined" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "vol_xs" : {
+                    "type" : "double"
+                  }
+                }, {
+                  "num_add_drivers" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "registration_number" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "owner_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "manufacture_dttm" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "purchase_dttm" : {
+                    "type" : "date"
+                  }
+                }, {
+                  "value" : {
+                    "type" : "double"
+                  }
+                }, {
+                  "mileage" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "parking_type" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "registered_keeper" : {
+                    "type" : "string"
+                  }
+                }, {
+                  "claims" : {
+                    "type" : "int"
+                  }
+                }, {
+                  "convictions" : {
+                    "type" : "int"
+                  }
+                } ]
+              },
+              "parallelismDisabled" : false,
+              "parameterQuery" : null,
+              "parameters" : null,
+              "sqlWarningLimit" : 100
+            }
+          },
+          "Metanode 2" : {
+            "operator" : {
+              "@type" : "openComposite",
+              "inputFactories" : [ ],
+              "outputFactories" : [ ],
+              "operators" : {
+                "Database Reader" : {
+                  "operator" : {
+                    "@type" : "readFromJDBC",
+                    "dataQuery" : "select * from echo",
+                    "discoverOutputAtRuntime" : false,
+                    "errorAction" : "ABORT",
+                    "fetchSize" : 1000,
+                    "jdbcConnector" : {
+                      "driverName" : "com.ingres.jdbc.IngresDriver",
+                      "user" : "aauser",
+                      "url" : "jdbc:ingres://localhost:VW7/echo",
+                      "tableName" : null,
+                      "hostNames" : [ "localhost" ],
+                      "connectionFactory" : {
+                        "@type" : "com.pervasive.datarush.jdbc.DefaultConnectionFactory"
+                      },
+                      "delimiter" : "\"",
+                      "password" : {
+                        "encryptedText" : "WFImwchw34o=",
+                        "provider" : "default"
+                      }
+                    },
+                    "outputType" : {
+                      "type" : "record",
+                      "representation" : "DENSE_BASE_NULL",
+                      "fields" : [ {
+                        "channel" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "unique_id" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "transaction_dttm" : {
+                          "type" : "timestamp"
+                        }
+                      }, {
+                        "inception_dttm" : {
+                          "type" : "date"
+                        }
+                      }, {
+                        "forename" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "surname" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "dob" : {
+                          "type" : "date"
+                        }
+                      }, {
+                        "marital_status" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "occupation_type" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "employers_business" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "licence_type" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "licence_date" : {
+                          "type" : "date"
+                        }
+                      }, {
+                        "main_user" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "garaged_postcode" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "ncd_years" : {
+                          "type" : "int"
+                        }
+                      }, {
+                        "class_of_use" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "other_vehicles" : {
+                          "type" : "int"
+                        }
+                      }, {
+                        "permanent_res" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "declined" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "vol_xs" : {
+                          "type" : "double"
+                        }
+                      }, {
+                        "num_add_drivers" : {
+                          "type" : "int"
+                        }
+                      }, {
+                        "registration_number" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "owner_type" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "manufacture_dttm" : {
+                          "type" : "int"
+                        }
+                      }, {
+                        "purchase_dttm" : {
+                          "type" : "date"
+                        }
+                      }, {
+                        "value" : {
+                          "type" : "double"
+                        }
+                      }, {
+                        "mileage" : {
+                          "type" : "int"
+                        }
+                      }, {
+                        "parking_type" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "registered_keeper" : {
+                          "type" : "string"
+                        }
+                      }, {
+                        "claims" : {
+                          "type" : "int"
+                        }
+                      }, {
+                        "convictions" : {
+                          "type" : "int"
+                        }
+                      } ]
+                    },
+                    "parallelismDisabled" : false,
+                    "parameterQuery" : null,
+                    "parameters" : null,
+                    "sqlWarningLimit" : 100
+                  }
+                }
+              },
+              "connections" : [ ],
+              "parallelismDisabled" : false
+            }
+          }
+        },
+        "connections" : [ ],
+        "parallelismDisabled" : false
+      }
+    }
+  },
+  "connections" : [ ]
+}

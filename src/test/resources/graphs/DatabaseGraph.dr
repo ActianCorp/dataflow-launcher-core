@@ -1,0 +1,115 @@
+{
+  "settings" : {
+    "name" : "Dataflow_Workflow",
+    "relativePath" : "Dataflow_Workflow"
+  },
+  "operators" : {
+    "Database Reader" : {
+      "operator" : {
+        "@type" : "readFromJDBC",
+        "dataQuery" : "select * from utlia01.test",
+        "discoverOutputAtRuntime" : false,
+        "errorAction" : "ABORT",
+        "fetchSize" : 1000,
+        "jdbcConnector" : {
+          "driverName" : "com.ingres.jdbc.IngresDriver",
+          "user" : "",
+          "url" : "jdbc:ingres://localhost:VW7/mydb",
+          "tableName" : null,
+          "hostNames" : [ "localhost" ],
+          "connectionFactory" : {
+            "@type" : "com.pervasive.datarush.jdbc.DefaultConnectionFactory"
+          },
+          "delimiter" : "\"",
+          "password" : {
+            "encryptedText" : "PteZIyxV4po=",
+            "provider" : "default"
+          }
+        },
+        "outputType" : {
+          "type" : "record",
+          "representation" : "DENSE_BASE_NULL",
+          "fields" : [ {
+            "custid" : {
+              "type" : "int"
+            }
+          }, {
+            "channel" : {
+              "type" : "string"
+            }
+          }, {
+            "dt" : {
+              "type" : "date"
+            }
+          }, {
+            "risk1" : {
+              "type" : "string"
+            }
+          }, {
+            "risk2" : {
+              "type" : "string"
+            }
+          } ]
+        },
+        "parallelismDisabled" : false,
+        "parameterQuery" : null,
+        "parameters" : null,
+        "sqlWarningLimit" : 100
+      }
+    },
+    "Database Reader_2" : {
+      "operator" : {
+        "@type" : "readFromJDBC",
+        "dataQuery" : "select * from utlia01.test",
+        "discoverOutputAtRuntime" : false,
+        "errorAction" : "ABORT",
+        "fetchSize" : 1000,
+        "jdbcConnector" : {
+          "driverName" : "com.ingres.jdbc.IngresDriver",
+          "user" : "",
+          "url" : "jdbc:ingres://localhost:VW7/mydb",
+          "tableName" : null,
+          "hostNames" : [ "localhost" ],
+          "connectionFactory" : {
+            "@type" : "com.pervasive.datarush.jdbc.DefaultConnectionFactory"
+          },
+          "delimiter" : "\"",
+          "password" : {
+            "encryptedText" : "PteZIyxV4po=",
+            "provider" : "default"
+          }
+        },
+        "outputType" : {
+          "type" : "record",
+          "representation" : "DENSE_BASE_NULL",
+          "fields" : [ {
+            "custid" : {
+              "type" : "int"
+            }
+          }, {
+            "channel" : {
+              "type" : "string"
+            }
+          }, {
+            "dt" : {
+              "type" : "date"
+            }
+          }, {
+            "risk1" : {
+              "type" : "string"
+            }
+          }, {
+            "risk2" : {
+              "type" : "string"
+            }
+          } ]
+        },
+        "parallelismDisabled" : false,
+        "parameterQuery" : null,
+        "parameters" : null,
+        "sqlWarningLimit" : 100
+      }
+    }
+  },
+  "connections" : [ ]
+}

@@ -1,0 +1,1091 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000022782b5, pid=172, tid=19936
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_45-b15) (build 1.8.0_45-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x1282b5]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000346fc000):  JavaThread "*** Profiler Agent Communication Thread" daemon [_thread_in_vm, id=19936, stack(0x0000000030b40000,0x0000000030c40000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xffffffff87de8080
+
+Registers:
+RAX=0x0000000030c3ef01, RBX=0x00000000346fc000, RCX=0xffffffff87de8080, RDX=0x0000000000000000
+RSP=0x0000000030c3eed0, RBP=0x000000002efe9960, RSI=0xffffffff87de8080, RDI=0x0000000030c3efe0
+R8 =0x00000000346fc000, R9 =0x8101010101010100, R10=0x7ef8fef8fefef8fc, R11=0x3eb0c95f00e9004a
+R12=0x00000000006ec050, R13=0x0000000000000008, R14=0x000007fefa909a60, R15=0x00000000346fc000
+RIP=0x00000000022782b5, EFLAGS=0x0000000000010282
+
+Top of Stack: (sp=0x0000000030c3eed0)
+0x0000000030c3eed0:   000007fefa909a60 0000000000000008
+0x0000000030c3eee0:   00000000346fc000 00000000022f1229
+0x0000000030c3eef0:   00000000346fc000 00000000024965ed
+0x0000000030c3ef00:   00000000346fc000 000007fefa9030ab
+0x0000000030c3ef10:   0000000030c3efa0 000000000247c7db
+0x0000000030c3ef20:   00000000346fc000 0000000000000000
+0x0000000030c3ef30:   0000000000000000 0000000000000000
+0x0000000030c3ef40:   ffffffff87de8080 000007fefa903412
+0x0000000030c3ef50:   0000000000000001 00000000346fc1f8
+0x0000000030c3ef60:   0000000000000026 0000000030d5b610
+0x0000000030c3ef70:   0000000030c3efa0 0000000030c3f0e0
+0x0000000030c3ef80:   000000000ee3fee0 000000002e620630
+0x0000000030c3ef90:   000000002fa60450 0000000000000000
+0x0000000030c3efa0:   0000000000000000 00000000346fc000
+0x0000000030c3efb0:   000000006430a5e0 0000000000000000
+0x0000000030c3efc0:   000000005b9339a8 0000000000000026 
+
+Instructions: (pc=0x00000000022782b5)
+0x0000000002278295:   cc cc cc cc cc cc cc cc cc cc cc 48 83 ec 28 48
+0x00000000022782a5:   85 c9 75 07 33 c0 48 83 c4 28 c3 48 89 5c 24 20
+0x00000000022782b5:   48 8b 19 48 85 db 74 20 48 83 fb 37 74 1a 48 8b
+0x00000000022782c5:   13 48 8b cb ff 52 10 84 c0 74 0d 48 8b c3 48 8b 
+
+
+Register to memory mapping:
+
+RAX=0x0000000030c3ef01 is pointing into the stack for thread: 0x00000000346fc000
+RBX=0x00000000346fc000 is a thread
+RCX=0xffffffff87de8080 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x0000000030c3eed0 is pointing into the stack for thread: 0x00000000346fc000
+RBP=0x000000002efe9960 is an unknown value
+RSI=0xffffffff87de8080 is an unknown value
+RDI=0x0000000030c3efe0 is pointing into the stack for thread: 0x00000000346fc000
+R8 =0x00000000346fc000 is a thread
+R9 =0x8101010101010100 is an unknown value
+R10=0x7ef8fef8fefef8fc is an unknown value
+R11=0x3eb0c95f00e9004a is an unknown value
+R12=0x00000000006ec050 is an unknown value
+R13=0x0000000000000008 is an unknown value
+R14=0x000007fefa909a60 is an unknown value
+R15=0x00000000346fc000 is a thread
+
+
+Stack: [0x0000000030b40000,0x0000000030c40000],  sp=0x0000000030c3eed0,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1282b5]
+V  [jvm.dll+0x3465ed]
+C  [profilerinterface.dll+0x3412]
+C  0x000000000f02dfcc
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.netbeans.lib.profiler.server.system.Stacks.getMethodNamesForJMethodIds(I[I[I)[B+0
+j  org.netbeans.lib.profiler.server.ProfilerInterface.getMethodNamesForJMethodIds([I)Lorg/netbeans/lib/profiler/wireprotocol/MethodNamesResponse;+18
+j  org.netbeans.lib.profiler.server.ProfilerServer.handleClientCommand(Lorg/netbeans/lib/profiler/wireprotocol/Command;)V+675
+j  org.netbeans.lib.profiler.server.ProfilerServer.listenToClient()V+48
+j  org.netbeans.lib.profiler.server.ProfilerServer.run()V+22
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000005decd000 JavaThread "AA_Echo.collector" [_thread_blocked, id=7728, stack(0x00000000a1a30000,0x00000000a1b30000)]
+  0x000000005deca800 JavaThread "AA_Echo.Stop Node.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=15268, stack(0x00000000a1750000,0x00000000a1850000)]
+  0x000000005deca000 JavaThread "AA_Echo.Stop Node.inputs.input.RepartitionPlan.RoundRobinPartition_5" [_thread_blocked, id=9924, stack(0x00000000a15a0000,0x00000000a16a0000)]
+  0x000000005dec8800 JavaThread "AA_Echo.Stop Node.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=9700, stack(0x00000000a1170000,0x00000000a1270000)]
+  0x000000005dec7800 JavaThread "AA_Echo.Stop Node.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=17568, stack(0x00000000a0fd0000,0x00000000a10d0000)]
+  0x000000005dec7000 JavaThread "AA_Echo.Stop Node.inputs.input.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=14960, stack(0x00000000a0e20000,0x00000000a0f20000)]
+  0x000000005dec4000 JavaThread "AA_Echo.Cross Join" [_thread_blocked, id=19592, stack(0x00000000a0b90000,0x00000000a0c90000)]
+  0x000000005dec3800 JavaThread "AA_Echo.Cross Join" [_thread_blocked, id=18916, stack(0x00000000a0a80000,0x00000000a0b80000)]
+  0x000000005dec1000 JavaThread "AA_Echo.Cross Join.inputs.right.MergeFlows" [_thread_blocked, id=12356, stack(0x00000000a0640000,0x00000000a0740000)]
+  0x000000005dec0800 JavaThread "AA_Echo.All Radar Fields" [_thread_blocked, id=19100, stack(0x00000000a0200000,0x00000000a0300000)]
+  0x000000005deb5800 JavaThread "AA_Echo.All Radar Fields" [_thread_blocked, id=18256, stack(0x000000009f900000,0x000000009fa00000)]
+  0x000000005deb5000 JavaThread "AA_Echo.All Radar Fields" [_thread_blocked, id=12864, stack(0x000000009f7e0000,0x000000009f8e0000)]
+  0x000000005deb2800 JavaThread "AA_Echo.Radar 7-12.Cross Join_5" [_thread_blocked, id=16232, stack(0x000000009f380000,0x000000009f480000)]
+  0x000000005deb2000 JavaThread "AA_Echo.Radar 7-12.Cross Join_5" [_thread_blocked, id=8376, stack(0x000000009e800000,0x000000009e900000)]
+  0x000000005deb0800 JavaThread "AA_Echo.Radar 7-12.Cross Join_5" [_thread_blocked, id=5880, stack(0x000000009efb0000,0x000000009f0b0000)]
+  0x000000005deaf800 JavaThread "AA_Echo.Radar 7-12.Cross Join_5" [_thread_blocked, id=19672, stack(0x000000009ee40000,0x000000009ef40000)]
+  0x000000005deaf000 JavaThread "AA_Echo.Radar 7-12.Cross Join_5" [_thread_blocked, id=14028, stack(0x000000009ea80000,0x000000009eb80000)]
+  0x0000000033da5800 JavaThread "AA_Echo.Radar 7-12.Cross Join_4" [_thread_blocked, id=2508, stack(0x000000009eba0000,0x000000009eca0000)]
+  0x0000000033da4800 JavaThread "AA_Echo.Radar 7-12.Cross Join_4" [_thread_blocked, id=14604, stack(0x000000009e960000,0x000000009ea60000)]
+  0x0000000033da4000 JavaThread "AA_Echo.Radar 7-12.Cross Join_4" [_thread_blocked, id=3556, stack(0x000000009e6c0000,0x000000009e7c0000)]
+  0x00000000341b5800 JavaThread "AA_Echo.Radar 7-12.Cross Join_4" [_thread_blocked, id=10424, stack(0x000000009e130000,0x000000009e230000)]
+  0x00000000341b4800 JavaThread "AA_Echo.Radar 7-12.Cross Join_4.inputs.right.MergeFlows" [_thread_blocked, id=18924, stack(0x000000009e260000,0x000000009e360000)]
+  0x00000000341b4000 JavaThread "AA_Echo.Radar 7-12.Cross Join_2" [_thread_blocked, id=17360, stack(0x000000009dfa0000,0x000000009e0a0000)]
+  0x00000000341b3000 JavaThread "AA_Echo.Radar 7-12.Cross Join_2" [_thread_blocked, id=21324, stack(0x000000009dd10000,0x000000009de10000)]
+  0x00000000328ac800 JavaThread "AA_Echo.Radar 7-12.Cross Join_2" [_thread_blocked, id=14840, stack(0x000000009de20000,0x000000009df20000)]
+  0x00000000328ac000 JavaThread "AA_Echo.Radar 7-12.Cross Join_2" [_thread_blocked, id=14768, stack(0x000000009db50000,0x000000009dc50000)]
+  0x00000000328aa800 JavaThread "AA_Echo.Radar 7-12.Cross Join_2" [_thread_blocked, id=21004, stack(0x000000009cc60000,0x000000009cd60000)]
+  0x00000000328a9800 JavaThread "AA_Echo.Radar 7-12.Cross Join_2.inputs.right.MergeFlows" [_thread_blocked, id=20772, stack(0x000000009d8b0000,0x000000009d9b0000)]
+  0x0000000032361000 JavaThread "AA_Echo.Radar 7-12.Cross Join_2.inputs.left.RepartitionPlan.MergeFlows_3" [_thread_blocked, id=17264, stack(0x000000009c820000,0x000000009c920000)]
+  0x0000000032360000 JavaThread "AA_Echo.Radar 7-12.Cross Join_2.inputs.left.RepartitionPlan.MergeFlows_2" [_thread_blocked, id=3156, stack(0x000000009d280000,0x000000009d380000)]
+  0x00000000341c3000 JavaThread "AA_Echo.Radar 7-12.Cross Join_2.inputs.left.RepartitionPlan.MergeFlows" [_thread_blocked, id=17600, stack(0x000000009d0e0000,0x000000009d1e0000)]
+  0x00000000341c1800 JavaThread "AA_Echo.Radar 7-12.Max manips/sess (11).ReducePartialAggregates" [_thread_blocked, id=13876, stack(0x000000009cd90000,0x000000009ce90000)]
+  0x00000000341c1000 JavaThread "AA_Echo.Radar 7-12.Max manips/sess (11).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=15428, stack(0x000000009cb50000,0x000000009cc50000)]
+  0x00000000303a4000 JavaThread "AA_Echo.Radar 7-12.Max manips/sess (11).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=8564, stack(0x000000009c480000,0x000000009c580000)]
+  0x00000000303a3800 JavaThread "AA_Echo.Radar 7-12.Max manips/sess (11).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=18376, stack(0x00000000939a0000,0x0000000093aa0000)]
+  0x0000000030d12800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3" [_thread_blocked, id=17020, stack(0x000000009c150000,0x000000009c250000)]
+  0x0000000030d12000 JavaThread "AA_Echo.Radar 7-12.Cross Join_3" [_thread_blocked, id=14696, stack(0x000000009c300000,0x000000009c400000)]
+  0x0000000030d10800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3" [_thread_blocked, id=16092, stack(0x000000009bf10000,0x000000009c010000)]
+  0x0000000030d0f800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3" [_thread_blocked, id=15656, stack(0x000000009bde0000,0x000000009bee0000)]
+  0x000000000bf62800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3" [_thread_blocked, id=11172, stack(0x000000009bcd0000,0x000000009bdd0000)]
+  0x000000000bf60800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3.inputs.left.RepartitionPlan.MergeFlows_5" [_thread_blocked, id=13176, stack(0x000000009b950000,0x000000009ba50000)]
+  0x000000000bf5f800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3.inputs.left.RepartitionPlan.MergeFlows_4" [_thread_blocked, id=20364, stack(0x000000009b4f0000,0x000000009b5f0000)]
+  0x00000000327c8800 JavaThread "AA_Echo.Radar 7-12.Cross Join_3.inputs.left.RepartitionPlan.MergeFlows" [_thread_blocked, id=17060, stack(0x000000009b5f0000,0x000000009b6f0000)]
+  0x00000000327c8000 JavaThread "AA_Echo.Radar 7-12.Cross Join_3.inputs.left.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=12408, stack(0x000000009b3f0000,0x000000009b4f0000)]
+  0x000000002e56e000 JavaThread "AA_Echo.Radar 7-12.Max manips/sess (11).SortedPartialAggregator" [_thread_blocked, id=16772, stack(0x000000009b020000,0x000000009b120000)]
+  0x000000002e56b800 JavaThread "AA_Echo.Radar 7-12.Max manips/sess (11).SortedPartialAggregator" [_thread_blocked, id=6580, stack(0x0000000099d60000,0x0000000099e60000)]
+  0x000000000db4d800 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).ReducePartialAggregates" [_thread_blocked, id=3120, stack(0x000000009a550000,0x000000009a650000)]
+  0x000000000db4d000 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=5604, stack(0x000000009aaf0000,0x000000009abf0000)]
+  0x000000000db4a800 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=15584, stack(0x000000009a8e0000,0x000000009a9e0000)]
+  0x000000002ecfd800 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=14476, stack(0x000000009a7c0000,0x000000009a8c0000)]
+  0x000000002ecfb800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates" [_thread_blocked, id=20944, stack(0x0000000099f90000,0x000000009a090000)]
+  0x000000002ecfa800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates" [_thread_blocked, id=20112, stack(0x000000009a290000,0x000000009a390000)]
+  0x00000000603e6800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates" [_thread_blocked, id=18676, stack(0x0000000099b20000,0x0000000099c20000)]
+  0x00000000603e6000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates" [_thread_blocked, id=20400, stack(0x0000000099c20000,0x0000000099d20000)]
+  0x000000003208d800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=11856, stack(0x0000000099790000,0x0000000099890000)]
+  0x000000003208c800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=16532, stack(0x0000000096020000,0x0000000096120000)]
+  0x000000003208c000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=18616, stack(0x0000000095430000,0x0000000095530000)]
+  0x000000003208a800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=15320, stack(0x0000000096120000,0x0000000096220000)]
+  0x00000000303ae000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=19140, stack(0x0000000095d60000,0x0000000095e60000)]
+  0x00000000303ad800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=11600, stack(0x0000000095e80000,0x0000000095f80000)]
+  0x00000000303ac000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=19064, stack(0x0000000095bc0000,0x0000000095cc0000)]
+  0x00000000303ab000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=6360, stack(0x0000000095a60000,0x0000000095b60000)]
+  0x00000000329f2000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=16948, stack(0x0000000095830000,0x0000000095930000)]
+  0x00000000329ef800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=21360, stack(0x0000000094cb0000,0x0000000094db0000)]
+  0x00000000329ef000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=20064, stack(0x0000000094f00000,0x0000000095000000)]
+  0x0000000030356000 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).SortedPartialAggregator" [_thread_blocked, id=18296, stack(0x0000000095060000,0x0000000095160000)]
+  0x0000000030355000 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).SortedPartialAggregator" [_thread_blocked, id=6768, stack(0x0000000094510000,0x0000000094610000)]
+  0x000000000cdee000 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).SortedPartialAggregator" [_thread_blocked, id=6584, stack(0x0000000094bb0000,0x0000000094cb0000)]
+  0x000000000cded000 JavaThread "AA_Echo.Radar 7-12.Total Maps current channel/sess2 (10).SortedPartialAggregator" [_thread_blocked, id=10152, stack(0x0000000094aa0000,0x0000000094ba0000)]
+  0x000000000b981000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=14660, stack(0x0000000094660000,0x0000000094760000)]
+  0x000000000b980800 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_5" [_thread_blocked, id=11756, stack(0x00000000940e0000,0x00000000941e0000)]
+  0x000000000b97e000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=20308, stack(0x0000000093f90000,0x0000000094090000)]
+  0x000000000e909000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=15128, stack(0x0000000093ce0000,0x0000000093de0000)]
+  0x000000000e90a000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_6" [_thread_blocked, id=16068, stack(0x0000000093bc0000,0x0000000093cc0000)]
+  0x000000000e907000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_6" [_thread_blocked, id=21416, stack(0x0000000093aa0000,0x0000000093ba0000)]
+  0x0000000031c02000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_6.inputs.right.MergeFlows" [_thread_blocked, id=19344, stack(0x0000000093570000,0x0000000093670000)]
+  0x0000000031c01000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.SortedPartialAggregator" [_thread_blocked, id=11104, stack(0x0000000092b50000,0x0000000092c50000)]
+  0x000000002e633000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.SortedPartialAggregator" [_thread_blocked, id=10196, stack(0x0000000090430000,0x0000000090530000)]
+  0x000000002e632000 JavaThread "AA_Echo.Radar 7-12.Manips/sess.SortedPartialAggregator" [_thread_blocked, id=14352, stack(0x00000000932b0000,0x00000000933b0000)]
+  0x000000002e631800 JavaThread "AA_Echo.Radar 7-12.Manips/sess.SortedPartialAggregator" [_thread_blocked, id=5416, stack(0x0000000093090000,0x0000000093190000)]
+  0x000000000eb01000 JavaThread "AA_Echo.Radar 7-12.Filter Rows" [_thread_blocked, id=3128, stack(0x0000000092a50000,0x0000000092b50000)]
+  0x000000000eb00800 JavaThread "AA_Echo.Radar 7-12.Filter Rows" [_thread_blocked, id=14760, stack(0x0000000092860000,0x0000000092960000)]
+  0x00000000301b1000 JavaThread "AA_Echo.Radar 7-12.Filter Rows" [_thread_blocked, id=11372, stack(0x0000000092700000,0x0000000092800000)]
+  0x00000000301b0000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).SortedPartialAggregator" [_thread_blocked, id=15976, stack(0x0000000092560000,0x0000000092660000)]
+  0x00000000301af800 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).SortedPartialAggregator" [_thread_blocked, id=16016, stack(0x0000000092400000,0x0000000092500000)]
+  0x00000000301ae800 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).SortedPartialAggregator" [_thread_blocked, id=15120, stack(0x0000000092280000,0x0000000092380000)]
+  0x00000000301ae000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).SortedPartialAggregator" [_thread_blocked, id=13684, stack(0x0000000091570000,0x0000000091670000)]
+  0x000000000ebfa000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).SortedPartialAggregator" [_thread_blocked, id=11168, stack(0x000000008ee70000,0x000000008ef70000)]
+  0x000000000ebf9000 JavaThread "AA_Echo.Radar 7-12.Manips current channel (7).SortedPartialAggregator" [_thread_blocked, id=9260, stack(0x0000000092050000,0x0000000092150000)]
+  0x000000000ebf8800 JavaThread "AA_Echo.Radar 7-12.Cross Join" [_thread_blocked, id=19696, stack(0x0000000091b50000,0x0000000091c50000)]
+  0x000000000ebf7800 JavaThread "AA_Echo.Radar 7-12.Cross Join" [_thread_blocked, id=13544, stack(0x0000000091e30000,0x0000000091f30000)]
+  0x000000000ebf7000 JavaThread "AA_Echo.Radar 7-12.Cross Join" [_thread_blocked, id=15844, stack(0x0000000091c50000,0x0000000091d50000)]
+  0x000000002e7af000 JavaThread "AA_Echo.Radar 7-12.Cross Join" [_thread_blocked, id=5580, stack(0x00000000918a0000,0x00000000919a0000)]
+  0x000000002e7ae800 JavaThread "AA_Echo.Radar 7-12.Cross Join.inputs.right.MergeFlows" [_thread_blocked, id=16572, stack(0x0000000091670000,0x0000000091770000)]
+  0x0000000060b18800 JavaThread "AA_Echo.Radar 7-12.Cross Join.inputs.left.RepartitionPlan.MergeFlows_5" [_thread_blocked, id=6908, stack(0x0000000090e80000,0x0000000090f80000)]
+  0x0000000060b17800 JavaThread "AA_Echo.Radar 7-12.Cross Join.inputs.left.RepartitionPlan.MergeFlows_4" [_thread_blocked, id=12452, stack(0x000000008a320000,0x000000008a420000)]
+  0x0000000060b17000 JavaThread "AA_Echo.Radar 7-12.Cross Join.inputs.left.RepartitionPlan.MergeFlows_3" [_thread_blocked, id=18328, stack(0x0000000091300000,0x0000000091400000)]
+  0x000000000e50e800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_5" [_thread_blocked, id=21500, stack(0x00000000901f0000,0x00000000902f0000)]
+  0x000000000e50d000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_5" [_thread_blocked, id=15408, stack(0x00000000907c0000,0x00000000908c0000)]
+  0x000000000e50c800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_5" [_thread_blocked, id=15060, stack(0x0000000090a60000,0x0000000090b60000)]
+  0x000000002e493800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_5" [_thread_blocked, id=17684, stack(0x00000000908d0000,0x00000000909d0000)]
+  0x000000002e492000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_5.inputs.right.MergeFlows" [_thread_blocked, id=20972, stack(0x0000000090530000,0x0000000090630000)]
+  0x000000002e491000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates" [_thread_blocked, id=6372, stack(0x0000000090330000,0x0000000090430000)]
+  0x000000002e490800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates" [_thread_blocked, id=16516, stack(0x000000008fbc0000,0x000000008fcc0000)]
+  0x000000000af82000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates" [_thread_blocked, id=20724, stack(0x000000008ffd0000,0x00000000900d0000)]
+  0x000000000af81800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates" [_thread_blocked, id=14828, stack(0x000000008fe90000,0x000000008ff90000)]
+  0x000000000af80800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates" [_thread_blocked, id=15800, stack(0x000000008fd10000,0x000000008fe10000)]
+  0x000000000af80000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=17324, stack(0x000000008fa50000,0x000000008fb50000)]
+  0x0000000060a1d800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=18896, stack(0x000000008f8d0000,0x000000008f9d0000)]
+  0x0000000060a1b000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=15836, stack(0x000000008f3e0000,0x000000008f4e0000)]
+  0x0000000030196800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=8880, stack(0x000000008f230000,0x000000008f330000)]
+  0x0000000030196000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=18708, stack(0x000000008f090000,0x000000008f190000)]
+  0x000000002e427800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=20312, stack(0x000000008ebf0000,0x000000008ecf0000)]
+  0x000000002e427000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=2728, stack(0x000000008e6e0000,0x000000008e7e0000)]
+  0x0000000079a4c000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=15156, stack(0x000000008e7e0000,0x000000008e8e0000)]
+  0x000000000ec37000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=21000, stack(0x000000008e580000,0x000000008e680000)]
+  0x000000000ec35800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=1880, stack(0x000000008e3e0000,0x000000008e4e0000)]
+  0x000000000ec34800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.decode" [_thread_blocked, id=18816, stack(0x000000008e1c0000,0x000000008e2c0000)]
+  0x000000000ec32800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.decode" [_thread_blocked, id=11904, stack(0x000000008dcc0000,0x000000008ddc0000)]
+  0x000000000ec31800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=14448, stack(0x000000008d940000,0x000000008da40000)]
+  0x000000000ec31000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.externalSort" [_thread_blocked, id=13196, stack(0x000000008ddc0000,0x000000008dec0000)]
+  0x000000000ec30000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=16940, stack(0x000000008db50000,0x000000008dc50000)]
+  0x000000000ec2f800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=19316, stack(0x000000008da50000,0x000000008db50000)]
+  0x000000000ec2e800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.externalSort" [_thread_blocked, id=21424, stack(0x000000008d530000,0x000000008d630000)]
+  0x000000000ec2e000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=8012, stack(0x000000008d840000,0x000000008d940000)]
+  0x000000000ec2d000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=8388, stack(0x000000008d670000,0x000000008d770000)]
+  0x000000000ec2c800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=20976, stack(0x000000008d3f0000,0x000000008d4f0000)]
+  0x000000000ec2b800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=6276, stack(0x000000008d1b0000,0x000000008d2b0000)]
+  0x000000000ec29800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.encode" [_thread_blocked, id=12792, stack(0x000000008cbb0000,0x000000008ccb0000)]
+  0x000000000ec28800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=10912, stack(0x000000008cce0000,0x000000008cde0000)]
+  0x000000000ec27000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=8008, stack(0x000000008bc70000,0x000000008bd70000)]
+  0x000000000ec26800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=19980, stack(0x000000008c8e0000,0x000000008c9e0000)]
+  0x000000000ec25800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=18948, stack(0x000000008c7a0000,0x000000008c8a0000)]
+  0x000000000ec23800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates" [_thread_blocked, id=14116, stack(0x000000008c660000,0x000000008c760000)]
+  0x000000000ec22800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates" [_thread_blocked, id=2912, stack(0x000000008c4b0000,0x000000008c5b0000)]
+  0x000000000ec21000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates" [_thread_blocked, id=16524, stack(0x000000008c210000,0x000000008c310000)]
+  0x000000000ec20800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates" [_thread_blocked, id=19084, stack(0x000000008bfe0000,0x000000008c0e0000)]
+  0x000000000ec1f800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates" [_thread_blocked, id=21488, stack(0x000000008be90000,0x000000008bf90000)]
+  0x00000000342bf800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=9060, stack(0x000000008bb70000,0x000000008bc70000)]
+  0x00000000342bd000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=15188, stack(0x000000008b720000,0x000000008b820000)]
+  0x00000000342bc800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=16556, stack(0x000000008ade0000,0x000000008aee0000)]
+  0x00000000342bb800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=15028, stack(0x000000008b490000,0x000000008b590000)]
+  0x00000000342bb000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=12640, stack(0x000000008aff0000,0x000000008b0f0000)]
+  0x00000000342b9800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=15220, stack(0x00000000818c0000,0x00000000819c0000)]
+  0x00000000342b8800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=9428, stack(0x000000008b130000,0x000000008b230000)]
+  0x00000000342b8000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=15768, stack(0x000000008aef0000,0x000000008aff0000)]
+  0x000000002e933000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=20872, stack(0x000000008acb0000,0x000000008adb0000)]
+  0x000000002e932000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=18772, stack(0x000000008aab0000,0x000000008abb0000)]
+  0x000000000d593800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=14528, stack(0x000000008a9b0000,0x000000008aab0000)]
+  0x000000000d593000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.decode" [_thread_blocked, id=17364, stack(0x000000008a7f0000,0x000000008a8f0000)]
+  0x000000002fafe800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=17800, stack(0x000000008a420000,0x000000008a520000)]
+  0x0000000030ffa800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=16964, stack(0x0000000089d50000,0x0000000089e50000)]
+  0x0000000032913000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=15016, stack(0x0000000081b00000,0x0000000081c00000)]
+  0x0000000060b1a000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=5112, stack(0x0000000081f20000,0x0000000082020000)]
+  0x0000000060b19800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.externalSort" [_thread_blocked, id=20380, stack(0x0000000081e20000,0x0000000081f20000)]
+  0x000000000cdf0800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=17132, stack(0x00000000819d0000,0x0000000081ad0000)]
+  0x000000000ac55000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=10972, stack(0x00000000814b0000,0x00000000815b0000)]
+  0x000000000e182000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.encode" [_thread_blocked, id=13576, stack(0x0000000080d80000,0x0000000080e80000)]
+  0x000000000e181800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=8360, stack(0x0000000081230000,0x0000000081330000)]
+  0x000000003010e000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=19460, stack(0x0000000080ee0000,0x0000000080fe0000)]
+  0x000000003010d000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=14532, stack(0x0000000080c50000,0x0000000080d50000)]
+  0x000000002ece0000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=11568, stack(0x0000000080aa0000,0x0000000080ba0000)]
+  0x00000000302d8000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates" [_thread_blocked, id=17116, stack(0x0000000080880000,0x0000000080980000)]
+  0x00000000302d7800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates" [_thread_blocked, id=18592, stack(0x000000007eed0000,0x000000007efd0000)]
+  0x00000000084ef800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates" [_thread_blocked, id=13340, stack(0x0000000080520000,0x0000000080620000)]
+  0x000000000af43000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates" [_thread_blocked, id=18976, stack(0x0000000080330000,0x0000000080430000)]
+  0x000000000af42000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates" [_thread_blocked, id=16816, stack(0x000000007eb40000,0x000000007ec40000)]
+  0x000000000bf47800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=21100, stack(0x000000007eca0000,0x000000007eda0000)]
+  0x000000000bf47000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=1688, stack(0x000000007e600000,0x000000007e700000)]
+  0x000000000ad3a000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=21276, stack(0x000000007e9f0000,0x000000007eaf0000)]
+  0x000000002e2de800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=11288, stack(0x000000007e710000,0x000000007e810000)]
+  0x000000002e2de000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=6460, stack(0x000000007e360000,0x000000007e460000)]
+  0x0000000060b1c800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=16244, stack(0x000000007e480000,0x000000007e580000)]
+  0x0000000060b1c000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=18724, stack(0x000000007dd70000,0x000000007de70000)]
+  0x000000000cd2a000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=10380, stack(0x000000007e200000,0x000000007e300000)]
+  0x000000000cd29000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=20080, stack(0x000000007e070000,0x000000007e170000)]
+  0x000000005d741000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=8896, stack(0x000000007dc60000,0x000000007dd60000)]
+  0x000000005d740800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=10624, stack(0x000000007daa0000,0x000000007dba0000)]
+  0x000000002fa54800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=19292, stack(0x000000007d780000,0x000000007d880000)]
+  0x000000002fa53800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.decode" [_thread_blocked, id=6508, stack(0x000000007d4d0000,0x000000007d5d0000)]
+  0x00000000348fe800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.decode" [_thread_blocked, id=12716, stack(0x000000007d040000,0x000000007d140000)]
+  0x00000000348fd800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=12080, stack(0x000000007c0c0000,0x000000007c1c0000)]
+  0x000000000a960800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=10976, stack(0x000000007caf0000,0x000000007cbf0000)]
+  0x000000000a95f800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.externalSort" [_thread_blocked, id=19988, stack(0x000000007c8e0000,0x000000007c9e0000)]
+  0x000000000a95d800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=11676, stack(0x000000007c490000,0x000000007c590000)]
+  0x000000000a95c800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=14676, stack(0x000000007c2e0000,0x000000007c3e0000)]
+  0x000000000a95b000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=7964, stack(0x000000007bd90000,0x000000007be90000)]
+  0x000000000a95a000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.encode" [_thread_blocked, id=15556, stack(0x000000007bf80000,0x000000007c080000)]
+  0x000000002ff7d000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=12300, stack(0x000000007aae0000,0x000000007abe0000)]
+  0x000000002ff7b000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=17508, stack(0x000000007a910000,0x000000007aa10000)]
+  0x000000002ff7a000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=17224, stack(0x0000000078720000,0x0000000078820000)]
+  0x000000002ff78800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=5428, stack(0x000000007a650000,0x000000007a750000)]
+  0x000000002ff78000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).ReducePartialAggregates" [_thread_blocked, id=20052, stack(0x000000007a4e0000,0x000000007a5e0000)]
+  0x000000002ff77000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=16480, stack(0x000000007a3d0000,0x000000007a4d0000)]
+  0x000000002e739000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=4152, stack(0x000000007a1a0000,0x000000007a2a0000)]
+  0x000000002e738800 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=17604, stack(0x000000007a090000,0x000000007a190000)]
+  0x000000002e736000 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).ReducePartialAggregates" [_thread_blocked, id=20456, stack(0x0000000078c70000,0x0000000078d70000)]
+  0x000000002e735800 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=20760, stack(0x0000000078b70000,0x0000000078c70000)]
+  0x000000002e734800 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=7236, stack(0x0000000078a50000,0x0000000078b50000)]
+  0x000000002e733000 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=20172, stack(0x0000000078840000,0x0000000078940000)]
+  0x0000000033637000 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=14928, stack(0x0000000078620000,0x0000000078720000)]
+  0x0000000033636000 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=1988, stack(0x00000000784f0000,0x00000000785f0000)]
+  0x0000000033634800 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).ReducePartialAggregates" [_thread_blocked, id=14756, stack(0x00000000780e0000,0x00000000781e0000)]
+  0x0000000033634000 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=19580, stack(0x0000000077380000,0x0000000077480000)]
+  0x0000000033631800 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=17972, stack(0x0000000077f90000,0x0000000078090000)]
+  0x0000000033631000 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=19176, stack(0x0000000077e80000,0x0000000077f80000)]
+  0x000000000aa1e800 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=18400, stack(0x0000000077a30000,0x0000000077b30000)]
+  0x000000000aa1d800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_4" [_thread_blocked, id=20332, stack(0x0000000077900000,0x0000000077a00000)]
+  0x000000000aa1d000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_4" [_thread_blocked, id=14536, stack(0x0000000077270000,0x0000000077370000)]
+  0x000000000aa1b800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_4" [_thread_blocked, id=17172, stack(0x0000000077120000,0x0000000077220000)]
+  0x000000000aa1a800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_4" [_thread_blocked, id=20660, stack(0x0000000076fd0000,0x00000000770d0000)]
+  0x000000000aa1a000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_4" [_thread_blocked, id=19640, stack(0x0000000076780000,0x0000000076880000)]
+  0x000000000aa19000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_4.inputs.right.MergeFlows" [_thread_blocked, id=14636, stack(0x0000000076d30000,0x0000000076e30000)]
+  0x000000000aa18800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.UnsortedPartialAggregator" [_thread_blocked, id=5292, stack(0x0000000076b70000,0x0000000076c70000)]
+  0x000000000af4f000 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.UnsortedPartialAggregator" [_thread_blocked, id=15224, stack(0x00000000759d0000,0x0000000075ad0000)]
+  0x000000000af4c800 JavaThread "AA_Echo.Radar 7-12.Manips/fields/sess.UnsortedPartialAggregator" [_thread_blocked, id=14948, stack(0x00000000762c0000,0x00000000763c0000)]
+  0x000000000af4c000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.UnsortedPartialAggregator" [_thread_blocked, id=6888, stack(0x00000000760e0000,0x00000000761e0000)]
+  0x000000000af49800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.UnsortedPartialAggregator" [_thread_blocked, id=10704, stack(0x0000000075d50000,0x0000000075e50000)]
+  0x000000000af49000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.UnsortedPartialAggregator" [_thread_blocked, id=18088, stack(0x0000000075b40000,0x0000000075c40000)]
+  0x000000000af48000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2_2.UnsortedPartialAggregator" [_thread_blocked, id=2016, stack(0x00000000756a0000,0x00000000757a0000)]
+  0x000000002f518800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.UnsortedPartialAggregator" [_thread_blocked, id=21480, stack(0x0000000075540000,0x0000000075640000)]
+  0x000000002f518000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.UnsortedPartialAggregator" [_thread_blocked, id=14860, stack(0x00000000752d0000,0x00000000753d0000)]
+  0x000000002f517000 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.UnsortedPartialAggregator" [_thread_blocked, id=11480, stack(0x0000000074f80000,0x0000000075080000)]
+  0x000000002f516800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.UnsortedPartialAggregator" [_thread_blocked, id=11612, stack(0x0000000075080000,0x0000000075180000)]
+  0x000000002f515800 JavaThread "AA_Echo.Radar 7-12.Risk/Vals all sess2.UnsortedPartialAggregator" [_thread_blocked, id=15072, stack(0x0000000074bc0000,0x0000000074cc0000)]
+  0x000000002f515000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).SortedPartialAggregator" [_thread_blocked, id=5596, stack(0x0000000074de0000,0x0000000074ee0000)]
+  0x000000002f514000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).SortedPartialAggregator" [_thread_blocked, id=18272, stack(0x0000000074cd0000,0x0000000074dd0000)]
+  0x000000002f512800 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).SortedPartialAggregator" [_thread_blocked, id=21164, stack(0x00000000748f0000,0x00000000749f0000)]
+  0x000000002e732000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).SortedPartialAggregator" [_thread_blocked, id=18192, stack(0x0000000074a60000,0x0000000074b60000)]
+  0x000000002e731000 JavaThread "AA_Echo.Radar 7-12.Max Manipulations all session 2 (12).SortedPartialAggregator" [_thread_blocked, id=17184, stack(0x00000000729d0000,0x0000000072ad0000)]
+  0x000000002e730800 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).SortedPartialAggregator" [_thread_blocked, id=20516, stack(0x0000000073fe0000,0x00000000740e0000)]
+  0x000000002e72f800 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).SortedPartialAggregator" [_thread_blocked, id=8540, stack(0x0000000074790000,0x0000000074890000)]
+  0x000000002e72f000 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).SortedPartialAggregator" [_thread_blocked, id=17520, stack(0x0000000074310000,0x0000000074410000)]
+  0x000000002e72c800 JavaThread "AA_Echo.Radar 7-12.Max Count Values per channel (8).SortedPartialAggregator" [_thread_blocked, id=888, stack(0x0000000074410000,0x0000000074510000)]
+  0x000000002e72c000 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).SortedPartialAggregator" [_thread_blocked, id=16640, stack(0x0000000074200000,0x0000000074300000)]
+  0x0000000030cee800 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).SortedPartialAggregator" [_thread_blocked, id=20296, stack(0x00000000740e0000,0x00000000741e0000)]
+  0x0000000030cee000 JavaThread "AA_Echo.Radar 7-12.Sum Values all channels (9).SortedPartialAggregator" [_thread_blocked, id=10288, stack(0x0000000073ee0000,0x0000000073fe0000)]
+  0x0000000030ceb800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3" [_thread_blocked, id=15232, stack(0x0000000073a90000,0x0000000073b90000)]
+  0x0000000030ceb000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3" [_thread_blocked, id=20436, stack(0x0000000073910000,0x0000000073a10000)]
+  0x0000000030ce8800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3" [_thread_blocked, id=13356, stack(0x00000000734f0000,0x00000000735f0000)]
+  0x000000000e8cd800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3.inputs.right.MergeFlows" [_thread_blocked, id=16568, stack(0x00000000732f0000,0x00000000733f0000)]
+  0x000000000e8cb000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3.inputs.left.RepartitionPlan.MergeFlows_4" [_thread_blocked, id=5104, stack(0x0000000072f10000,0x0000000073010000)]
+  0x000000000e8ca800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3.inputs.left.RepartitionPlan.MergeFlows_3" [_thread_blocked, id=15728, stack(0x0000000072df0000,0x0000000072ef0000)]
+  0x000000000e8c8000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_3.inputs.left.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=18164, stack(0x0000000071f30000,0x0000000072030000)]
+  0x000000000e8c7800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess" [_thread_blocked, id=10416, stack(0x0000000072690000,0x0000000072790000)]
+  0x0000000031827000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess" [_thread_blocked, id=10176, stack(0x0000000072580000,0x0000000072680000)]
+  0x0000000031826000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess" [_thread_blocked, id=17888, stack(0x0000000072350000,0x0000000072450000)]
+  0x0000000031824800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=8080, stack(0x0000000072070000,0x0000000072170000)]
+  0x0000000031824000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=19920, stack(0x0000000070680000,0x0000000070780000)]
+  0x0000000031823000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=13556, stack(0x0000000071e10000,0x0000000071f10000)]
+  0x0000000031821000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=13940, stack(0x0000000071920000,0x0000000071a20000)]
+  0x0000000031820000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=19336, stack(0x0000000071180000,0x0000000071280000)]
+  0x000000003181e000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=10776, stack(0x0000000071460000,0x0000000071560000)]
+  0x000000003181d000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=20876, stack(0x00000000712b0000,0x00000000713b0000)]
+  0x000000003181b000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=14808, stack(0x0000000070f40000,0x0000000071040000)]
+  0x0000000031818800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=19268, stack(0x0000000070890000,0x0000000070990000)]
+  0x000000000c072000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=20964, stack(0x00000000709e0000,0x0000000070ae0000)]
+  0x000000000c071000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=17136, stack(0x000000006fec0000,0x000000006ffc0000)]
+  0x000000000c06f000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=5912, stack(0x0000000070570000,0x0000000070670000)]
+  0x000000000c06c800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=15640, stack(0x0000000070200000,0x0000000070300000)]
+  0x000000000c06c000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=11720, stack(0x000000006f770000,0x000000006f870000)]
+  0x000000000c06b000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=8128, stack(0x0000000070090000,0x0000000070190000)]
+  0x000000000c069800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=14868, stack(0x000000006fca0000,0x000000006fda0000)]
+  0x000000000c069000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=20676, stack(0x000000006fae0000,0x000000006fbe0000)]
+  0x000000000c068000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=2816, stack(0x000000006f8a0000,0x000000006f9a0000)]
+  0x000000000c066000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=13116, stack(0x000000006f280000,0x000000006f380000)]
+  0x000000000c065000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=16984, stack(0x000000006f0e0000,0x000000006f1e0000)]
+  0x000000000c063000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_4.Pipeline_2.Sort.decode" [_thread_blocked, id=6352, stack(0x000000006ef00000,0x000000006f000000)]
+  0x000000000b78f800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=10208, stack(0x000000006ec90000,0x000000006ed90000)]
+  0x000000000b78e000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=18536, stack(0x000000006eb50000,0x000000006ec50000)]
+  0x000000000b78d800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_6.Pipeline_2.Sort.externalSort" [_thread_blocked, id=19188, stack(0x000000006c210000,0x000000006c310000)]
+  0x000000000b78c800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=15948, stack(0x000000006ea10000,0x000000006eb10000)]
+  0x000000000b78a800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=15712, stack(0x000000006e710000,0x000000006e810000)]
+  0x000000000b789800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=15112, stack(0x000000006e4f0000,0x000000006e5f0000)]
+  0x000000000b789000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=5644, stack(0x000000006e1c0000,0x000000006e2c0000)]
+  0x0000000033ca1800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=12156, stack(0x0000000068240000,0x0000000068340000)]
+  0x0000000033ca0800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_4.Pipeline_2.Sort.encode" [_thread_blocked, id=13980, stack(0x000000006e2c0000,0x000000006e3c0000)]
+  0x0000000033ca0000 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=16380, stack(0x000000006e0a0000,0x000000006e1a0000)]
+  0x0000000033c9d800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_6.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=17376, stack(0x000000006dae0000,0x000000006dbe0000)]
+  0x0000000033c9a800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline_2.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=8460, stack(0x000000006d580000,0x000000006d680000)]
+  0x000000000a88a800 JavaThread "AA_Echo.Radar 7-12.Join.Join.FullJoinProcess.inputs.left.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=12776, stack(0x000000006d840000,0x000000006d940000)]
+  0x000000000a889000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates" [_thread_blocked, id=15552, stack(0x000000006d440000,0x000000006d540000)]
+  0x000000000a888000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates" [_thread_blocked, id=18968, stack(0x000000006d250000,0x000000006d350000)]
+  0x000000000a887800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates" [_thread_blocked, id=12632, stack(0x000000006d0b0000,0x000000006d1b0000)]
+  0x000000000a886000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates" [_thread_blocked, id=14068, stack(0x000000006cc80000,0x000000006cd80000)]
+  0x000000000a885000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=21452, stack(0x000000006cb00000,0x000000006cc00000)]
+  0x000000000a884800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=21444, stack(0x000000006c990000,0x000000006ca90000)]
+  0x000000002e95e000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=18964, stack(0x000000006c6a0000,0x000000006c7a0000)]
+  0x000000002e95d000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=13444, stack(0x000000006c520000,0x000000006c620000)]
+  0x000000002e95c800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=20468, stack(0x000000006bc90000,0x000000006bd90000)]
+  0x000000002e95a000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=18072, stack(0x000000006bdc0000,0x000000006bec0000)]
+  0x000000002e959800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=12048, stack(0x000000006bb00000,0x000000006bc00000)]
+  0x000000002e958800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=20644, stack(0x000000006b9a0000,0x000000006baa0000)]
+  0x000000002e957000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=3108, stack(0x000000006b540000,0x000000006b640000)]
+  0x000000000c0b1800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=17032, stack(0x000000006b6a0000,0x000000006b7a0000)]
+  0x000000000c0b0000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=13376, stack(0x000000006b420000,0x000000006b520000)]
+  0x000000000c0af800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=20732, stack(0x000000006b2d0000,0x000000006b3d0000)]
+  0x000000000c0ae800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=10888, stack(0x000000006ad90000,0x000000006ae90000)]
+  0x000000000c0ac800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.decode" [_thread_blocked, id=9860, stack(0x000000006a9b0000,0x000000006aab0000)]
+  0x000000000c0ab800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=15924, stack(0x000000006ac20000,0x000000006ad20000)]
+  0x000000000edd5800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=14504, stack(0x0000000068f90000,0x0000000069090000)]
+  0x000000000edd4800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.externalSort" [_thread_blocked, id=17876, stack(0x000000006a810000,0x000000006a910000)]
+  0x000000000edd4000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=11800, stack(0x000000006a6a0000,0x000000006a7a0000)]
+  0x000000000edd2800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.externalSort" [_thread_blocked, id=9012, stack(0x000000006a3e0000,0x000000006a4e0000)]
+  0x000000000edd1800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=9112, stack(0x000000006a1f0000,0x000000006a2f0000)]
+  0x000000000edcf800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=17280, stack(0x0000000069f40000,0x000000006a040000)]
+  0x000000000edce800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.encode" [_thread_blocked, id=2512, stack(0x0000000069db0000,0x0000000069eb0000)]
+  0x000000003377d800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=16160, stack(0x0000000069c40000,0x0000000069d40000)]
+  0x000000003377b800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=15536, stack(0x0000000069760000,0x0000000069860000)]
+  0x000000003377a800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=21028, stack(0x00000000694a0000,0x00000000695a0000)]
+  0x0000000033778800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=15636, stack(0x0000000069200000,0x0000000069300000)]
+  0x0000000033777800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=16700, stack(0x0000000069090000,0x0000000069190000)]
+  0x0000000030c5b000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates" [_thread_blocked, id=17716, stack(0x0000000068d20000,0x0000000068e20000)]
+  0x0000000030c5a000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates" [_thread_blocked, id=3512, stack(0x0000000068630000,0x0000000068730000)]
+  0x0000000030c59800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates" [_thread_blocked, id=20616, stack(0x0000000068b70000,0x0000000068c70000)]
+  0x0000000030c57000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=13332, stack(0x00000000684f0000,0x00000000685f0000)]
+  0x0000000030c56800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=20988, stack(0x0000000067240000,0x0000000067340000)]
+  0x0000000030c54000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=15352, stack(0x0000000067f70000,0x0000000068070000)]
+  0x000000002ecc9800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=20900, stack(0x0000000067c50000,0x0000000067d50000)]
+  0x000000002ecc8800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=21180, stack(0x000000005fae0000,0x000000005fbe0000)]
+  0x000000002ecc8000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=16852, stack(0x0000000066ce0000,0x0000000066de0000)]
+  0x000000002ecc7000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=10884, stack(0x0000000067a80000,0x0000000067b80000)]
+  0x00000000303b2000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=6376, stack(0x0000000067870000,0x0000000067970000)]
+  0x00000000303b1000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=16756, stack(0x00000000676b0000,0x00000000677b0000)]
+  0x00000000303b0800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=19464, stack(0x0000000067510000,0x0000000067610000)]
+  0x000000000e383800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=15208, stack(0x0000000067040000,0x0000000067140000)]
+  0x000000000e382800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=13428, stack(0x0000000066f00000,0x0000000067000000)]
+  0x000000002e938800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates" [_thread_blocked, id=6836, stack(0x00000000644c0000,0x00000000645c0000)]
+  0x000000002e935800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=15396, stack(0x00000000667f0000,0x00000000668f0000)]
+  0x000000002e64b000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=17216, stack(0x0000000066610000,0x0000000066710000)]
+  0x000000002e64a800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=13804, stack(0x0000000066290000,0x0000000066390000)]
+  0x000000002e649000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=13256, stack(0x0000000066190000,0x0000000066290000)]
+  0x000000002e648000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=21144, stack(0x0000000065ca0000,0x0000000065da0000)]
+  0x00000000342e9800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=16060, stack(0x0000000065780000,0x0000000065880000)]
+  0x00000000342e9000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=15504, stack(0x0000000065da0000,0x0000000065ea0000)]
+  0x00000000342e8000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=16868, stack(0x0000000065ba0000,0x0000000065ca0000)]
+  0x00000000349ab800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=18068, stack(0x00000000658a0000,0x00000000659a0000)]
+  0x00000000349ab000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=20608, stack(0x0000000065660000,0x0000000065760000)]
+  0x00000000349aa000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=13092, stack(0x00000000654d0000,0x00000000655d0000)]
+  0x000000005dea4000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=18720, stack(0x0000000065320000,0x0000000065420000)]
+  0x000000005dea3000 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates" [_thread_blocked, id=20372, stack(0x00000000650e0000,0x00000000651e0000)]
+  0x000000005dea2800 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=18024, stack(0x0000000064d80000,0x0000000064e80000)]
+  0x000000005dea1800 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=12736, stack(0x00000000618e0000,0x00000000619e0000)]
+  0x000000000e247800 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=6948, stack(0x0000000064af0000,0x0000000064bf0000)]
+  0x000000000e246800 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=16292, stack(0x0000000064c50000,0x0000000064d50000)]
+  0x000000000e246000 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=15100, stack(0x00000000641c0000,0x00000000642c0000)]
+  0x000000000e245000 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=21096, stack(0x0000000063580000,0x0000000063680000)]
+  0x000000000e244800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes current channel session 2 (4)" [_thread_blocked, id=17108, stack(0x00000000649f0000,0x0000000064af0000)]
+  0x00000000622a1800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes current channel session 2 (4)" [_thread_blocked, id=11328, stack(0x0000000064700000,0x0000000064800000)]
+  0x00000000622a1000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes current channel session 2 (4)" [_thread_blocked, id=13468, stack(0x00000000629d0000,0x0000000062ad0000)]
+  0x00000000622a0000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes current channel session 2 (4)" [_thread_blocked, id=20384, stack(0x00000000645c0000,0x00000000646c0000)]
+  0x000000006229f800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes current channel session 2 (4)" [_thread_blocked, id=21380, stack(0x0000000064050000,0x0000000064150000)]
+  0x000000000b787000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2" [_thread_blocked, id=11088, stack(0x0000000063eb0000,0x0000000063fb0000)]
+  0x000000000b786000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2" [_thread_blocked, id=17632, stack(0x0000000063cd0000,0x0000000063dd0000)]
+  0x000000000b785800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2" [_thread_blocked, id=15276, stack(0x0000000063bb0000,0x0000000063cb0000)]
+  0x0000000030cfb800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2" [_thread_blocked, id=18596, stack(0x00000000639d0000,0x0000000063ad0000)]
+  0x0000000030cfb000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2.inputs.right.MergeFlows" [_thread_blocked, id=9716, stack(0x00000000638a0000,0x00000000639a0000)]
+  0x0000000030cfa000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2.inputs.left.RepartitionPlan.MergeFlows_6" [_thread_blocked, id=21052, stack(0x0000000063790000,0x0000000063890000)]
+  0x0000000030cf8800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2.inputs.left.RepartitionPlan.MergeFlows_4" [_thread_blocked, id=6224, stack(0x0000000063480000,0x0000000063580000)]
+  0x000000002ef14000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2.inputs.left.RepartitionPlan.MergeFlows_3" [_thread_blocked, id=13948, stack(0x0000000063370000,0x0000000063470000)]
+  0x000000002ef11800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join_2.inputs.left.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=17748, stack(0x0000000062e70000,0x0000000062f70000)]
+  0x000000002ef11000 JavaThread "AA_Echo.Radar 7-12.Join.SelectFields" [_thread_blocked, id=14692, stack(0x0000000062c90000,0x0000000062d90000)]
+  0x000000002ecdd800 JavaThread "AA_Echo.Radar 7-12.Join.SelectFields" [_thread_blocked, id=15068, stack(0x000000005f1a0000,0x000000005f2a0000)]
+  0x000000002ecdc800 JavaThread "AA_Echo.Radar 7-12.Join.SelectFields" [_thread_blocked, id=19248, stack(0x00000000617e0000,0x00000000618e0000)]
+  0x000000000b6ff000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.UnsortedPartialAggregator" [_thread_blocked, id=19956, stack(0x00000000613b0000,0x00000000614b0000)]
+  0x000000000b6fd800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.UnsortedPartialAggregator" [_thread_blocked, id=14940, stack(0x0000000061220000,0x0000000061320000)]
+  0x000000000b6fd000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.UnsortedPartialAggregator" [_thread_blocked, id=2476, stack(0x0000000061030000,0x0000000061130000)]
+  0x000000000b6fc000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.UnsortedPartialAggregator" [_thread_blocked, id=19692, stack(0x000000005fdb0000,0x000000005feb0000)]
+  0x0000000033cf9000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels_2.UnsortedPartialAggregator" [_thread_blocked, id=6328, stack(0x000000005fbe0000,0x000000005fce0000)]
+  0x0000000033cf8800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.SortedPartialAggregator" [_thread_blocked, id=20092, stack(0x000000005f9d0000,0x000000005fad0000)]
+  0x0000000033cf6000 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.SortedPartialAggregator" [_thread_blocked, id=14832, stack(0x000000005f5c0000,0x000000005f6c0000)]
+  0x000000002fdae800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.SortedPartialAggregator" [_thread_blocked, id=20084, stack(0x000000005f440000,0x000000005f540000)]
+  0x000000002fdad800 JavaThread "AA_Echo.Radar 7-12.Count Values per Risk By Channel.SortedPartialAggregator" [_thread_blocked, id=16488, stack(0x000000005f2b0000,0x000000005f3b0000)]
+  0x000000002fdac000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.SortedPartialAggregator" [_thread_blocked, id=5616, stack(0x000000005f0a0000,0x000000005f1a0000)]
+  0x000000002fdab800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.SortedPartialAggregator" [_thread_blocked, id=12016, stack(0x000000005ec80000,0x000000005ed80000)]
+  0x0000000079a03000 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.SortedPartialAggregator" [_thread_blocked, id=7544, stack(0x000000005e9f0000,0x000000005eaf0000)]
+  0x0000000079a02000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join" [_thread_blocked, id=18648, stack(0x000000005e820000,0x000000005e920000)]
+  0x000000002f810000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join" [_thread_blocked, id=14992, stack(0x000000005e720000,0x000000005e820000)]
+  0x000000002f80f800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join" [_thread_blocked, id=18960, stack(0x000000005d5b0000,0x000000005d6b0000)]
+  0x000000002f80e800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join" [_thread_blocked, id=10232, stack(0x000000005d480000,0x000000005d580000)]
+  0x0000000033ac8000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join.inputs.left.RepartitionPlan.MergeFlows_6" [_thread_blocked, id=9280, stack(0x000000005cc90000,0x000000005cd90000)]
+  0x0000000033aca000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join.inputs.left.RepartitionPlan.MergeFlows_5" [_thread_blocked, id=19904, stack(0x000000005d000000,0x000000005d100000)]
+  0x0000000033ac8800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join.inputs.left.RepartitionPlan.MergeFlows_3" [_thread_blocked, id=8556, stack(0x000000005b830000,0x000000005b930000)]
+  0x00000000342b5800 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join.inputs.left.RepartitionPlan.MergeFlows_2" [_thread_blocked, id=8076, stack(0x000000005c8a0000,0x000000005c9a0000)]
+  0x00000000342b5000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join.inputs.left.RepartitionPlan.MergeFlows" [_thread_blocked, id=20932, stack(0x000000005c700000,0x000000005c800000)]
+  0x00000000342b4000 JavaThread "AA_Echo.Radar 1-6,14-15.Cross Join.inputs.left.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=13000, stack(0x000000005c5d0000,0x000000005c6d0000)]
+  0x00000000342b2800 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).SortedPartialAggregator" [_thread_blocked, id=1232, stack(0x000000005c300000,0x000000005c400000)]
+  0x00000000342b2000 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).SortedPartialAggregator" [_thread_blocked, id=21484, stack(0x000000005c200000,0x000000005c300000)]
+  0x00000000342af800 JavaThread "AA_Echo.Radar 1-6,14-15.Max quotes (5).SortedPartialAggregator" [_thread_blocked, id=14384, stack(0x000000005beb0000,0x000000005bfb0000)]
+  0x00000000342af000 JavaThread "AA_Echo.Radar 1-6,14-15.Current Session" [_thread_blocked, id=18992, stack(0x000000005b490000,0x000000005b590000)]
+  0x00000000342ac800 JavaThread "AA_Echo.Radar 1-6,14-15.Current Session" [_thread_blocked, id=14964, stack(0x000000005b590000,0x000000005b690000)]
+  0x00000000342ac000 JavaThread "AA_Echo.Radar 1-6,14-15.Current Session" [_thread_blocked, id=17228, stack(0x000000005b340000,0x000000005b440000)]
+  0x00000000342a9800 JavaThread "AA_Echo.Radar 1-6,14-15.Total Quotes for channel (1)" [_thread_blocked, id=14520, stack(0x0000000059b20000,0x0000000059c20000)]
+  0x00000000342a9000 JavaThread "AA_Echo.Radar 1-6,14-15.Total Quotes for channel (1)" [_thread_blocked, id=9524, stack(0x000000005afa0000,0x000000005b0a0000)]
+  0x00000000342a8000 JavaThread "AA_Echo.Radar 1-6,14-15.Total Quotes for channel (1)" [_thread_blocked, id=2720, stack(0x0000000059d30000,0x0000000059e30000)]
+  0x00000000342a6800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates" [_thread_blocked, id=20240, stack(0x0000000059c30000,0x0000000059d30000)]
+  0x00000000342a6000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates" [_thread_blocked, id=20784, stack(0x0000000059a20000,0x0000000059b20000)]
+  0x00000000342a4800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates" [_thread_blocked, id=16004, stack(0x0000000059920000,0x0000000059a20000)]
+  0x00000000342a3800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates" [_thread_blocked, id=10116, stack(0x0000000058e20000,0x0000000058f20000)]
+  0x00000000342a3000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=7944, stack(0x0000000059640000,0x0000000059740000)]
+  0x00000000602d3800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=12028, stack(0x0000000059320000,0x0000000059420000)]
+  0x00000000602d2800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=19568, stack(0x00000000591e0000,0x00000000592e0000)]
+  0x00000000602d0800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=5564, stack(0x0000000058cc0000,0x0000000058dc0000)]
+  0x00000000602cf800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=20040, stack(0x0000000058b90000,0x0000000058c90000)]
+  0x00000000602cf000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=12800, stack(0x0000000058730000,0x0000000058830000)]
+  0x00000000602cd800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.decode" [_thread_blocked, id=20428, stack(0x0000000058a30000,0x0000000058b30000)]
+  0x00000000602cc800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=15144, stack(0x0000000058850000,0x0000000058950000)]
+  0x00000000602cb000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=21364, stack(0x0000000058440000,0x0000000058540000)]
+  0x00000000602ca800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=13060, stack(0x0000000058310000,0x0000000058410000)]
+  0x00000000602c9800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=14360, stack(0x0000000057090000,0x0000000057190000)]
+  0x00000000602c7800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=8176, stack(0x0000000057aa0000,0x0000000057ba0000)]
+  0x00000000602c6800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates" [_thread_blocked, id=17104, stack(0x00000000556b0000,0x00000000557b0000)]
+  0x00000000602c4000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=21316, stack(0x0000000057340000,0x0000000057440000)]
+  0x000000002f7e8000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=2436, stack(0x0000000057980000,0x0000000057a80000)]
+  0x000000002f7e6000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=20832, stack(0x0000000057450000,0x0000000057550000)]
+  0x000000002f7e5000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=13976, stack(0x0000000056e40000,0x0000000056f40000)]
+  0x000000002f7e3800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=20180, stack(0x0000000056f90000,0x0000000057090000)]
+  0x000000002f7e3000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=16936, stack(0x0000000055040000,0x0000000055140000)]
+  0x000000002f7e2000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=15944, stack(0x0000000056960000,0x0000000056a60000)]
+  0x000000002f7e1800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.encode" [_thread_blocked, id=16204, stack(0x0000000056d40000,0x0000000056e40000)]
+  0x000000002f7e0800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.encode" [_thread_blocked, id=15056, stack(0x0000000056c00000,0x0000000056d00000)]
+  0x000000002f7e0000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=19752, stack(0x0000000056a60000,0x0000000056b60000)]
+  0x000000002f7df000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=16928, stack(0x00000000566d0000,0x00000000567d0000)]
+  0x000000002f7dd000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=17180, stack(0x0000000056530000,0x0000000056630000)]
+  0x000000002f7dc000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=16024, stack(0x0000000056410000,0x0000000056510000)]
+  0x000000002f7da000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates" [_thread_blocked, id=14672, stack(0x0000000055f10000,0x0000000056010000)]
+  0x000000002f7d9000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates" [_thread_blocked, id=9476, stack(0x0000000056030000,0x0000000056130000)]
+  0x000000003282a000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=11992, stack(0x0000000055d00000,0x0000000055e00000)]
+  0x0000000032829000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=17536, stack(0x0000000055b20000,0x0000000055c20000)]
+  0x0000000032828800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=19616, stack(0x0000000055900000,0x0000000055a00000)]
+  0x0000000032827000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=15964, stack(0x00000000557b0000,0x00000000558b0000)]
+  0x0000000032825800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=16664, stack(0x00000000553e0000,0x00000000554e0000)]
+  0x0000000032824800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=20232, stack(0x0000000055140000,0x0000000055240000)]
+  0x0000000032824000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.decode" [_thread_blocked, id=9768, stack(0x0000000054f30000,0x0000000055030000)]
+  0x0000000032823000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=10992, stack(0x0000000054c50000,0x0000000054d50000)]
+  0x0000000032821000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=17012, stack(0x00000000529b0000,0x0000000052ab0000)]
+  0x000000003281e800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates" [_thread_blocked, id=12628, stack(0x00000000544b0000,0x00000000545b0000)]
+  0x000000003281e000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates" [_thread_blocked, id=18100, stack(0x00000000547a0000,0x00000000548a0000)]
+  0x000000003281d000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates" [_thread_blocked, id=18560, stack(0x0000000054350000,0x0000000054450000)]
+  0x000000000d9af800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=14816, stack(0x0000000053de0000,0x0000000053ee0000)]
+  0x000000000d9af000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=18568, stack(0x0000000053c40000,0x0000000053d40000)]
+  0x000000000d9ad800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=19256, stack(0x00000000532b0000,0x00000000533b0000)]
+  0x000000000d9ac800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=6904, stack(0x0000000053960000,0x0000000053a60000)]
+  0x000000000d9ac000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=9032, stack(0x00000000537d0000,0x00000000538d0000)]
+  0x000000000d9ab000 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_5" [_thread_blocked, id=21456, stack(0x0000000051390000,0x0000000051490000)]
+  0x000000000d9a9800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=9288, stack(0x0000000052bf0000,0x0000000052cf0000)]
+  0x000000000d9a9000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=9076, stack(0x00000000533c0000,0x00000000534c0000)]
+  0x000000000d9a8000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=13964, stack(0x0000000053010000,0x0000000053110000)]
+  0x000000000d9a7800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=5612, stack(0x0000000052e50000,0x0000000052f50000)]
+  0x000000000d9a6800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=18564, stack(0x0000000052d10000,0x0000000052e10000)]
+  0x000000000d9a6000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=17028, stack(0x0000000052af0000,0x0000000052bf0000)]
+  0x000000000d9a4800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=16752, stack(0x00000000528b0000,0x00000000529b0000)]
+  0x000000000d9a3800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=16452, stack(0x00000000527b0000,0x00000000528b0000)]
+  0x000000000d9a1800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=1116, stack(0x0000000052360000,0x0000000052460000)]
+  0x0000000034289800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=14796, stack(0x0000000051ab0000,0x0000000051bb0000)]
+  0x0000000034289000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=19040, stack(0x00000000520b0000,0x00000000521b0000)]
+  0x0000000034287800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=14896, stack(0x0000000051db0000,0x0000000051eb0000)]
+  0x0000000034286800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=14220, stack(0x000000004fd70000,0x000000004fe70000)]
+  0x0000000034286000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=18284, stack(0x0000000051be0000,0x0000000051ce0000)]
+  0x0000000034283800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=1844, stack(0x0000000051630000,0x0000000051730000)]
+  0x0000000034283000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=15668, stack(0x00000000514b0000,0x00000000515b0000)]
+  0x0000000034280800 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=15760, stack(0x0000000050f90000,0x0000000051090000)]
+  0x0000000034280000 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_5" [_thread_blocked, id=18000, stack(0x0000000050420000,0x0000000050520000)]
+  0x000000003427f000 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=19796, stack(0x000000004fb60000,0x000000004fc60000)]
+  0x000000003427d800 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=19732, stack(0x0000000050c50000,0x0000000050d50000)]
+  0x000000003427d000 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=2676, stack(0x0000000050aa0000,0x0000000050ba0000)]
+  0x000000003427a800 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess" [_thread_blocked, id=16748, stack(0x0000000050640000,0x0000000050740000)]
+  0x000000000bbba000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess" [_thread_blocked, id=18228, stack(0x0000000050530000,0x0000000050630000)]
+  0x000000000bbb8800 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess" [_thread_blocked, id=8224, stack(0x0000000050150000,0x0000000050250000)]
+  0x000000000bbb8000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=15036, stack(0x000000004ffb0000,0x00000000500b0000)]
+  0x000000000bbb7000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=16584, stack(0x000000004b180000,0x000000004b280000)]
+  0x000000000bbb5000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_2.EventUnpartition" [_thread_blocked, id=15468, stack(0x000000004f390000,0x000000004f490000)]
+  0x000000000bbb4000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=16112, stack(0x000000004fc70000,0x000000004fd70000)]
+  0x000000000bbb2800 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=16592, stack(0x000000004f920000,0x000000004fa20000)]
+  0x000000000bbb1000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=3656, stack(0x000000004e480000,0x000000004e580000)]
+  0x000000000bbaf000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=7464, stack(0x000000004f490000,0x000000004f590000)]
+  0x000000000bbae000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=15456, stack(0x000000004d5e0000,0x000000004d6e0000)]
+  0x000000000bbac000 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=13412, stack(0x000000004f030000,0x000000004f130000)]
+  0x000000000bbab000 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=15152, stack(0x000000004ef10000,0x000000004f010000)]
+  0x00000000343eb000 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=13692, stack(0x000000004d0e0000,0x000000004d1e0000)]
+  0x00000000343ea800 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition" [_thread_blocked, id=19520, stack(0x000000004d6e0000,0x000000004d7e0000)]
+  0x00000000343e9000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.UnsortedPartialAggregator" [_thread_blocked, id=10508, stack(0x000000004e930000,0x000000004ea30000)]
+  0x00000000343e8000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.UnsortedPartialAggregator" [_thread_blocked, id=9332, stack(0x000000004e790000,0x000000004e890000)]
+  0x00000000343e7800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.UnsortedPartialAggregator" [_thread_blocked, id=8568, stack(0x000000004e590000,0x000000004e690000)]
+  0x00000000343e6800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.UnsortedPartialAggregator" [_thread_blocked, id=9244, stack(0x000000004e380000,0x000000004e480000)]
+  0x00000000343e6000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.UnsortedPartialAggregator" [_thread_blocked, id=9100, stack(0x000000004e280000,0x000000004e380000)]
+  0x00000000343e5000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.UnsortedPartialAggregator" [_thread_blocked, id=12684, stack(0x000000004e090000,0x000000004e190000)]
+  0x00000000343e4800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.UnsortedPartialAggregator" [_thread_blocked, id=15328, stack(0x000000004df30000,0x000000004e030000)]
+  0x00000000343e3800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.UnsortedPartialAggregator" [_thread_blocked, id=12972, stack(0x000000004dd60000,0x000000004de60000)]
+  0x00000000343e2000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.UnsortedPartialAggregator" [_thread_blocked, id=1336, stack(0x000000004dc10000,0x000000004dd10000)]
+  0x00000000343e1800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.UnsortedPartialAggregator" [_thread_blocked, id=20840, stack(0x000000004a9b0000,0x000000004aab0000)]
+  0x00000000343e0800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.UnsortedPartialAggregator" [_thread_blocked, id=16428, stack(0x000000004da30000,0x000000004db30000)]
+  0x00000000343df000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.UnsortedPartialAggregator" [_thread_blocked, id=20068, stack(0x000000004d450000,0x000000004d550000)]
+  0x00000000343de800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.UnsortedPartialAggregator" [_thread_blocked, id=21388, stack(0x000000004ae20000,0x000000004af20000)]
+  0x00000000343dd800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.UnsortedPartialAggregator" [_thread_blocked, id=1368, stack(0x000000004d320000,0x000000004d420000)]
+  0x0000000008606800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.UnsortedPartialAggregator" [_thread_blocked, id=16540, stack(0x0000000049f20000,0x000000004a020000)]
+  0x0000000008606000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.UnsortedPartialAggregator" [_thread_blocked, id=7372, stack(0x000000004bfb0000,0x000000004c0b0000)]
+  0x0000000008603800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.UnsortedPartialAggregator" [_thread_blocked, id=13508, stack(0x000000004cd20000,0x000000004ce20000)]
+  0x0000000008603000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.UnsortedPartialAggregator" [_thread_blocked, id=15500, stack(0x000000004cb40000,0x000000004cc40000)]
+  0x0000000008602000 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).SortedPartialAggregator" [_thread_blocked, id=14576, stack(0x000000004bd60000,0x000000004be60000)]
+  0x0000000008600800 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).SortedPartialAggregator" [_thread_blocked, id=11184, stack(0x000000004c790000,0x000000004c890000)]
+  0x0000000008600000 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).SortedPartialAggregator" [_thread_blocked, id=15872, stack(0x000000004c610000,0x000000004c710000)]
+  0x00000000085fe800 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).SortedPartialAggregator" [_thread_blocked, id=10068, stack(0x000000004c3b0000,0x000000004c4b0000)]
+  0x00000000085fd800 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).SortedPartialAggregator" [_thread_blocked, id=14376, stack(0x000000004c2b0000,0x000000004c3b0000)]
+  0x00000000085fc000 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).SortedPartialAggregator" [_thread_blocked, id=15672, stack(0x000000004beb0000,0x000000004bfb0000)]
+  0x00000000085fb800 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).SortedPartialAggregator" [_thread_blocked, id=18768, stack(0x000000004b7a0000,0x000000004b8a0000)]
+  0x00000000085fa800 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).SortedPartialAggregator" [_thread_blocked, id=13996, stack(0x000000004bc60000,0x000000004bd60000)]
+  0x00000000085fa000 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).SortedPartialAggregator" [_thread_blocked, id=10612, stack(0x000000004bb00000,0x000000004bc00000)]
+  0x00000000342fa800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.SelectFields" [_thread_blocked, id=20560, stack(0x000000004b390000,0x000000004b490000)]
+  0x00000000342f8800 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).SortedPartialAggregator" [_thread_blocked, id=18644, stack(0x000000004b080000,0x000000004b180000)]
+  0x00000000342f7800 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).SortedPartialAggregator" [_thread_blocked, id=14380, stack(0x000000004af20000,0x000000004b020000)]
+  0x00000000342f5800 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).SortedPartialAggregator" [_thread_blocked, id=18060, stack(0x000000004a8a0000,0x000000004a9a0000)]
+  0x00000000342f4800 JavaThread "AA_Echo.Radar 1-6,14-15.Sum of number of quotes (3).SortedPartialAggregator" [_thread_blocked, id=4076, stack(0x000000004a290000,0x000000004a390000)]
+  0x00000000342f4000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.SelectFields" [_thread_blocked, id=9448, stack(0x000000004a4d0000,0x000000004a5d0000)]
+  0x00000000342f2800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.decode" [_thread_blocked, id=19536, stack(0x000000004a5e0000,0x000000004a6e0000)]
+  0x00000000342f1800 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.SelectFields" [_thread_blocked, id=16316, stack(0x000000004a3a0000,0x000000004a4a0000)]
+  0x00000000342f0000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=14684, stack(0x000000004a020000,0x000000004a120000)]
+  0x00000000342ef800 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).SortedPartialAggregator" [_thread_blocked, id=12960, stack(0x0000000049e20000,0x0000000049f20000)]
+  0x00000000342ee800 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).SortedPartialAggregator" [_thread_blocked, id=17624, stack(0x0000000049cc0000,0x0000000049dc0000)]
+  0x00000000342ec800 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).SortedPartialAggregator" [_thread_blocked, id=16296, stack(0x00000000495e0000,0x00000000496e0000)]
+  0x000000000a857800 JavaThread "AA_Echo.Radar 1-6,14-15.Max/Count Quotes on a channel (2)(15).SortedPartialAggregator" [_thread_blocked, id=2124, stack(0x0000000049820000,0x0000000049920000)]
+  0x000000000a857000 JavaThread "AA_Echo.Radar 7-12.Pivot Risk Fields" [_thread_blocked, id=18092, stack(0x00000000487e0000,0x00000000488e0000)]
+  0x000000000a855800 JavaThread "AA_Echo.Radar 7-12.Pivot Risk Fields" [_thread_blocked, id=14924, stack(0x0000000049430000,0x0000000049530000)]
+  0x000000000a854800 JavaThread "AA_Echo.Radar 7-12.Pivot Risk Fields" [_thread_blocked, id=21440, stack(0x0000000049100000,0x0000000049200000)]
+  0x000000000a853000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.encode" [_thread_blocked, id=14312, stack(0x0000000048f60000,0x0000000049060000)]
+  0x000000000a852800 JavaThread "AA_Echo.Radar 1-6,14-15.Filter to last 5 mins" [_thread_blocked, id=18620, stack(0x0000000048dc0000,0x0000000048ec0000)]
+  0x000000000a851800 JavaThread "AA_Echo.Radar 7-12.Count Values per risk all channels.ReducePartialAggregates" [_thread_blocked, id=11748, stack(0x0000000048c90000,0x0000000048d90000)]
+  0x000000000a851000 JavaThread "AA_Echo.Radar 1-6,14-15.Filter to last 5 mins" [_thread_blocked, id=19976, stack(0x0000000048950000,0x0000000048a50000)]
+  0x000000000af8e000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=7528, stack(0x00000000480b0000,0x00000000481b0000)]
+  0x000000000af8d800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates" [_thread_blocked, id=19412, stack(0x0000000047c40000,0x0000000047d40000)]
+  0x000000000af8c000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates" [_thread_blocked, id=20268, stack(0x0000000047eb0000,0x0000000047fb0000)]
+  0x000000000af8b000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates" [_thread_blocked, id=20140, stack(0x00000000484b0000,0x00000000485b0000)]
+  0x000000000af8a800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates" [_thread_blocked, id=15080, stack(0x0000000048380000,0x0000000048480000)]
+  0x000000000af89800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates" [_thread_blocked, id=11004, stack(0x00000000481b0000,0x00000000482b0000)]
+  0x000000000af88000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=14900, stack(0x0000000047d40000,0x0000000047e40000)]
+  0x0000000033ca9800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=9544, stack(0x0000000047ae0000,0x0000000047be0000)]
+  0x0000000033ca7000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=20604, stack(0x00000000477f0000,0x00000000478f0000)]
+  0x0000000033ca6800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=9500, stack(0x00000000476e0000,0x00000000477e0000)]
+  0x0000000033ca5000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=14784, stack(0x0000000047140000,0x0000000047240000)]
+  0x0000000033ca4000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=916, stack(0x0000000047280000,0x0000000047380000)]
+  0x0000000033ca3800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=9204, stack(0x0000000047020000,0x0000000047120000)]
+  0x000000002fc20800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=9364, stack(0x00000000469a0000,0x0000000046aa0000)]
+  0x000000002fc1f800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=18832, stack(0x0000000044030000,0x0000000044130000)]
+  0x000000002fc1f000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=16356, stack(0x0000000046b40000,0x0000000046c40000)]
+  0x000000002fc1e000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=12204, stack(0x0000000046890000,0x0000000046990000)]
+  0x000000002fc1d800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=16300, stack(0x00000000460e0000,0x00000000461e0000)]
+  0x000000002fc1c800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=15508, stack(0x0000000046790000,0x0000000046890000)]
+  0x000000002fc1b000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.decode" [_thread_blocked, id=11240, stack(0x0000000046210000,0x0000000046310000)]
+  0x000000002fc1a800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=15796, stack(0x0000000045c30000,0x0000000045d30000)]
+  0x000000002e711800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.decode" [_thread_blocked, id=17036, stack(0x0000000045670000,0x0000000045770000)]
+  0x000000002e710000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.externalSort" [_thread_blocked, id=15484, stack(0x0000000045e80000,0x0000000045f80000)]
+  0x000000002e70f000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates" [_thread_blocked, id=5704, stack(0x0000000045d70000,0x0000000045e70000)]
+  0x000000002e70e800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=18300, stack(0x0000000045b20000,0x0000000045c20000)]
+  0x000000002e70d800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.externalSort" [_thread_blocked, id=20508, stack(0x0000000045950000,0x0000000045a50000)]
+  0x000000002e70d000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=16064, stack(0x00000000457b0000,0x00000000458b0000)]
+  0x000000002e70c000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=11952, stack(0x0000000042fc0000,0x00000000430c0000)]
+  0x000000002e70b800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=12132, stack(0x0000000045550000,0x0000000045650000)]
+  0x000000002f52a800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.encode" [_thread_blocked, id=12252, stack(0x00000000453e0000,0x00000000454e0000)]
+  0x000000002f52a000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=12612, stack(0x0000000045200000,0x0000000045300000)]
+  0x000000002f529000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.encode" [_thread_blocked, id=20008, stack(0x0000000045070000,0x0000000045170000)]
+  0x000000002f527000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=1660, stack(0x0000000044c00000,0x0000000044d00000)]
+  0x000000002f526000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=19984, stack(0x0000000044ae0000,0x0000000044be0000)]
+  0x000000002f525800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=8492, stack(0x0000000044910000,0x0000000044a10000)]
+  0x000000002f524800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=16332, stack(0x0000000042060000,0x0000000042160000)]
+  0x000000002f524000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=14404, stack(0x0000000042c10000,0x0000000042d10000)]
+  0x000000002e3cf800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates" [_thread_blocked, id=13748, stack(0x00000000446c0000,0x00000000447c0000)]
+  0x000000002e3cd800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates" [_thread_blocked, id=5412, stack(0x00000000431c0000,0x00000000432c0000)]
+  0x000000002e3cc800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates" [_thread_blocked, id=3288, stack(0x0000000044340000,0x0000000044440000)]
+  0x000000002e3cb000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=20408, stack(0x0000000043950000,0x0000000043a50000)]
+  0x000000002e3ca800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=21420, stack(0x0000000043f30000,0x0000000044030000)]
+  0x000000002e3c9800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=19192, stack(0x0000000043db0000,0x0000000043eb0000)]
+  0x000000002e2fe000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=21072, stack(0x0000000043850000,0x0000000043950000)]
+  0x000000002e2fd800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=17596, stack(0x0000000043700000,0x0000000043800000)]
+  0x000000002e2fc800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=19416, stack(0x0000000043540000,0x0000000043640000)]
+  0x000000002e2fb000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=17740, stack(0x00000000432d0000,0x00000000433d0000)]
+  0x000000002e2fa800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=15332, stack(0x00000000430c0000,0x00000000431c0000)]
+  0x000000002e2f9800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=17664, stack(0x0000000042ec0000,0x0000000042fc0000)]
+  0x000000002e2f9000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=14200, stack(0x0000000041e10000,0x0000000041f10000)]
+  0x000000002e2f8000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=18436, stack(0x0000000042d10000,0x0000000042e10000)]
+  0x000000002f72d000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=3736, stack(0x0000000040e20000,0x0000000040f20000)]
+  0x000000002f72c000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=20128, stack(0x0000000042af0000,0x0000000042bf0000)]
+  0x000000002f72a800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=16692, stack(0x0000000042730000,0x0000000042830000)]
+  0x000000002f72a000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=16408, stack(0x0000000042540000,0x0000000042640000)]
+  0x000000000e94c000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=20744, stack(0x000000003e7b0000,0x000000003e8b0000)]
+  0x000000000e94b800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=19436, stack(0x0000000041f50000,0x0000000042050000)]
+  0x0000000034186000 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.externalSort" [_thread_blocked, id=17168, stack(0x00000000413e0000,0x00000000414e0000)]
+  0x0000000034185800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=11120, stack(0x0000000041d10000,0x0000000041e10000)]
+  0x0000000034184800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=15440, stack(0x0000000041bf0000,0x0000000041cf0000)]
+  0x0000000034183000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.decode" [_thread_blocked, id=18388, stack(0x0000000041880000,0x0000000041980000)]
+  0x00000000356be800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=20276, stack(0x0000000041710000,0x0000000041810000)]
+  0x00000000356bd800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel per Session.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=17720, stack(0x0000000041520000,0x0000000041620000)]
+  0x00000000356bd000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=18280, stack(0x0000000040690000,0x0000000040790000)]
+  0x00000000356bb800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=16808, stack(0x00000000410e0000,0x00000000411e0000)]
+  0x0000000079a73000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=6468, stack(0x0000000040f40000,0x0000000041040000)]
+  0x0000000079a71800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=20568, stack(0x0000000040c00000,0x0000000040d00000)]
+  0x0000000079a70800 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).ReducePartialAggregates" [_thread_blocked, id=17976, stack(0x0000000040a80000,0x0000000040b80000)]
+  0x0000000079a6f800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_5" [_thread_blocked, id=11180, stack(0x0000000040920000,0x0000000040a20000)]
+  0x0000000033d7f000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=21044, stack(0x0000000040230000,0x0000000040330000)]
+  0x0000000033d7e800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=10512, stack(0x0000000040560000,0x0000000040660000)]
+  0x0000000033d7d800 JavaThread "AA_Echo.Radar 1-6,14-15.Quotes per Channel.ReducePartialAggregates" [_thread_blocked, id=17240, stack(0x0000000040380000,0x0000000040480000)]
+  0x0000000030e1c800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=14440, stack(0x000000003fe20000,0x000000003ff20000)]
+  0x0000000030e1b800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.encode" [_thread_blocked, id=18344, stack(0x000000003fbb0000,0x000000003fcb0000)]
+  0x000000002ec6d800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=19840, stack(0x000000003f9e0000,0x000000003fae0000)]
+  0x000000002ec6c800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=9496, stack(0x000000003f500000,0x000000003f600000)]
+  0x000000002ec6b000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=19892, stack(0x000000003f610000,0x000000003f710000)]
+  0x000000002ec6a800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=5628, stack(0x000000003f1d0000,0x000000003f2d0000)]
+  0x000000003282f800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=14468, stack(0x000000003f380000,0x000000003f480000)]
+  0x000000003282e800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_2.Orderer" [_thread_blocked, id=17328, stack(0x000000003f0b0000,0x000000003f1b0000)]
+  0x000000003282d000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=14152, stack(0x000000003ed20000,0x000000003ee20000)]
+  0x000000003282c800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=17868, stack(0x000000003ec20000,0x000000003ed20000)]
+  0x000000000afe1800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates" [_thread_blocked, id=8504, stack(0x000000003d490000,0x000000003d590000)]
+  0x000000000afe1000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_6.Orderer" [_thread_blocked, id=2688, stack(0x000000003e8b0000,0x000000003e9b0000)]
+  0x000000000dffc800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates" [_thread_blocked, id=17968, stack(0x000000003e510000,0x000000003e610000)]
+  0x000000000dffc000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.externalSort" [_thread_blocked, id=18392, stack(0x000000003e350000,0x000000003e450000)]
+  0x000000000dff9800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=11848, stack(0x000000003dee0000,0x000000003dfe0000)]
+  0x000000003376e800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=14188, stack(0x000000003dcc0000,0x000000003ddc0000)]
+  0x000000003376e000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates" [_thread_blocked, id=16520, stack(0x000000003cc80000,0x000000003cd80000)]
+  0x000000003376b800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=20484, stack(0x000000003d790000,0x000000003d890000)]
+  0x000000000baaa000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=15444, stack(0x000000003d5f0000,0x000000003d6f0000)]
+  0x000000000baa8800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates" [_thread_blocked, id=6296, stack(0x000000003d1b0000,0x000000003d2b0000)]
+  0x000000000baa8000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_3.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=12072, stack(0x000000003d000000,0x000000003d100000)]
+  0x000000000baa7000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_6" [_thread_blocked, id=10352, stack(0x000000003cec0000,0x000000003cfc0000)]
+  0x0000000031698000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.decode" [_thread_blocked, id=14480, stack(0x000000003cb80000,0x000000003cc80000)]
+  0x0000000031697800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates" [_thread_blocked, id=13632, stack(0x000000003c830000,0x000000003c930000)]
+  0x000000003489d000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_2.Pipeline_2.Sort.externalSort" [_thread_blocked, id=13952, stack(0x000000003c950000,0x000000003ca50000)]
+  0x000000003489c800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=13476, stack(0x000000003c700000,0x000000003c800000)]
+  0x000000003019b000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=13264, stack(0x000000003c0c0000,0x000000003c1c0000)]
+  0x000000003019a000 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_5" [_thread_blocked, id=18416, stack(0x000000003c400000,0x000000003c500000)]
+  0x0000000030198000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_3.EventUnpartition" [_thread_blocked, id=12848, stack(0x000000003bdc0000,0x000000003bec0000)]
+  0x0000000033db7800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess" [_thread_blocked, id=10540, stack(0x000000003bba0000,0x000000003bca0000)]
+  0x0000000033db5800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=16724, stack(0x000000003b770000,0x000000003b870000)]
+  0x0000000033db4800 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=18732, stack(0x000000003b5d0000,0x000000003b6d0000)]
+  0x000000003498c000 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_2" [_thread_blocked, id=16580, stack(0x000000003b160000,0x000000003b260000)]
+  0x000000003498b800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=14060, stack(0x000000003b020000,0x000000003b120000)]
+  0x000000003498a800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_4.EventUnpartition" [_thread_blocked, id=15684, stack(0x000000003ae50000,0x000000003af50000)]
+  0x000000002e99f800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=18700, stack(0x000000003a9c0000,0x000000003aac0000)]
+  0x000000002e99f000 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_4" [_thread_blocked, id=15624, stack(0x000000003a810000,0x000000003a910000)]
+  0x000000002e99d800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=6624, stack(0x000000003a000000,0x000000003a100000)]
+  0x000000000e75a000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=16076, stack(0x000000003a6c0000,0x000000003a7c0000)]
+  0x000000000e75a800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.encode" [_thread_blocked, id=19912, stack(0x0000000039ab0000,0x0000000039bb0000)]
+  0x000000000ccf3800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.encode" [_thread_blocked, id=16824, stack(0x000000003a590000,0x000000003a690000)]
+  0x000000000ccf3000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.encode" [_thread_blocked, id=1704, stack(0x000000003a450000,0x000000003a550000)]
+  0x000000000ccf2000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=12916, stack(0x000000003a2a0000,0x000000003a3a0000)]
+  0x000000000ccf1800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=10812, stack(0x000000003a140000,0x000000003a240000)]
+  0x000000003188f000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=16176, stack(0x0000000039d90000,0x0000000039e90000)]
+  0x000000003188e000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.encode" [_thread_blocked, id=19092, stack(0x0000000039bc0000,0x0000000039cc0000)]
+  0x000000003188d800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_4" [_thread_blocked, id=18012, stack(0x00000000399a0000,0x0000000039aa0000)]
+  0x00000000320d3800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_4.Orderer" [_thread_blocked, id=18972, stack(0x0000000039690000,0x0000000039790000)]
+  0x00000000320d2800 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=11696, stack(0x0000000039170000,0x0000000039270000)]
+  0x00000000320d2000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.ExtendedPipeline.Pipeline_2.Sort.externalSort" [_thread_blocked, id=18572, stack(0x0000000039460000,0x0000000039560000)]
+  0x00000000320d0800 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_6" [_thread_blocked, id=13424, stack(0x0000000039030000,0x0000000039130000)]
+  0x00000000328b9000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_3" [_thread_blocked, id=18316, stack(0x0000000038e70000,0x0000000038f70000)]
+  0x00000000328b8800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.decode" [_thread_blocked, id=18196, stack(0x0000000038d10000,0x0000000038e10000)]
+  0x00000000328b7000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=21084, stack(0x0000000038ba0000,0x0000000038ca0000)]
+  0x00000000328b6000 JavaThread "AA_Echo.Radar 1-6,14-15.Max No Quotes across session 2 (6).ReducePartialAggregates.inputs.input.RepartitionPlan.RoundRobinPartition_3" [_thread_blocked, id=18096, stack(0x0000000038a50000,0x0000000038b50000)]
+  0x000000003182a000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=17164, stack(0x0000000038700000,0x0000000038800000)]
+  0x0000000031829800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_6.EventUnpartition" [_thread_blocked, id=10592, stack(0x00000000379e0000,0x0000000037ae0000)]
+  0x0000000031828800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline.Pipeline_2.Sort.decode" [_thread_blocked, id=17040, stack(0x0000000038590000,0x0000000038690000)]
+  0x0000000031686000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition_2" [_thread_blocked, id=12412, stack(0x0000000037410000,0x0000000037510000)]
+  0x0000000031684800 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.externalSort" [_thread_blocked, id=17416, stack(0x0000000038250000,0x0000000038350000)]
+  0x000000000ab04000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_3.Pipeline_2.Sort.externalSort" [_thread_blocked, id=5836, stack(0x0000000037fe0000,0x00000000380e0000)]
+  0x000000000ab03000 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_6.Pipeline_2.Sort.decode" [_thread_blocked, id=14820, stack(0x0000000037ee0000,0x0000000037fe0000)]
+  0x000000000ab02800 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows.Orderer" [_thread_blocked, id=21340, stack(0x0000000037d00000,0x0000000037e00000)]
+  0x000000002e2ed000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=20388, stack(0x0000000037690000,0x0000000037790000)]
+  0x000000002e2ea000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=17796, stack(0x0000000037300000,0x0000000037400000)]
+  0x00000000302cc000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.MergeSortedRows_5.Orderer" [_thread_blocked, id=16264, stack(0x0000000036fe0000,0x00000000370e0000)]
+  0x00000000302ca800 JavaThread "AA_Echo.Radar 7-12.Values per Risk By Channel.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=12896, stack(0x0000000036c30000,0x0000000036d30000)]
+  0x00000000302ca000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates" [_thread_blocked, id=20836, stack(0x0000000036850000,0x0000000036950000)]
+  0x00000000302c9000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.RepartitionPlan.FunctionBasedPartition" [_thread_blocked, id=7392, stack(0x0000000036b00000,0x0000000036c00000)]
+  0x000000003223e800 JavaThread "AA_Echo.Radar 1-6,14-15.Count (14).ReducePartialAggregates.inputs.input.RepartitionPlan.MergeFlows" [_thread_blocked, id=19120, stack(0x0000000036450000,0x0000000036550000)]
+  0x0000000032241800 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows.EventUnpartition" [_thread_blocked, id=14464, stack(0x00000000365e0000,0x00000000366e0000)]
+  0x0000000032240000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels.ReducePartialAggregates.inputs.input.ExtendedPipeline_5.Pipeline_2.Sort.reorderFields" [_thread_blocked, id=17448, stack(0x0000000036080000,0x0000000036180000)]
+  0x000000003223c000 JavaThread "AA_Echo.Radar 7-12.Values per Risk All Channels_2.ReducePartialAggregates.inputs.input.ExtendedPipeline_4.Pipeline_2.Sort.externalSort" [_thread_blocked, id=16312, stack(0x0000000035ee0000,0x0000000035fe0000)]
+  0x00000000346f8000 JavaThread "AA_Echo.Radar 1-6,14-15.Join.Join.FullJoinProcess.inputs.left.RepartitionPlan.MergeSortedRows_5.EventUnpartition" [_thread_blocked, id=15808, stack(0x0000000035d90000,0x0000000035e90000)]
+  0x000000003470d000 JavaThread "AA_Echo.Radar 1-6,14-15.Restrict to current channel.Join.FullJoinProcess.inputs.right.RepartitionPlan.MergeSortedRows_3.Orderer" [_thread_blocked, id=21168, stack(0x0000000035b90000,0x0000000035c90000)]
+  0x00000000346fe000 JavaThread "Thread-2403" [_thread_blocked, id=21152, stack(0x0000000035a30000,0x0000000035b30000)]
+  0x0000000034724800 JavaThread "pool-4789-thread-1" [_thread_blocked, id=16228, stack(0x00000000358c0000,0x00000000359c0000)]
+  0x00000000346fc800 JavaThread "pool-4787-thread-1" [_thread_blocked, id=15576, stack(0x00000000308e0000,0x00000000309e0000)]
+  0x00000000346ff000 JavaThread "Thread-2402" [_thread_blocked, id=20464, stack(0x0000000033380000,0x0000000033480000)]
+  0x0000000030251800 JavaThread "pool-1-thread-14" [_thread_blocked, id=16492, stack(0x0000000034520000,0x0000000034620000)]
+  0x00000000346fd800 JavaThread "*** Profiler Agent Special Execution Thread 10" daemon [_thread_blocked, id=16648, stack(0x0000000035780000,0x0000000035880000)]
+  0x000000003223a800 JavaThread "*** Profiler Agent Special Execution Thread 6" daemon [_thread_blocked, id=20396, stack(0x00000000331f0000,0x00000000332f0000)]
+  0x0000000032240800 JavaThread "*** JFluid Monitor thread ***" daemon [_thread_blocked, id=18368, stack(0x0000000032f50000,0x0000000033050000)]
+=>0x00000000346fc000 JavaThread "*** Profiler Agent Communication Thread" daemon [_thread_in_vm, id=19936, stack(0x0000000030b40000,0x0000000030c40000)]
+  0x0000000030253000 JavaThread "pool-1-thread-13" [_thread_blocked, id=16100, stack(0x0000000032da0000,0x0000000032ea0000)]
+  0x0000000031682800 JavaThread "pool-1-thread-12" [_thread_blocked, id=14544, stack(0x000000002df60000,0x000000002e060000)]
+  0x0000000030251000 JavaThread "pool-1-thread-11" [_thread_blocked, id=10060, stack(0x0000000031c40000,0x0000000031d40000)]
+  0x000000002f123000 JavaThread "pool-1-thread-10" [_thread_blocked, id=15908, stack(0x00000000307c0000,0x00000000308c0000)]
+  0x000000002f102800 JavaThread "pool-1-thread-9" [_thread_blocked, id=16404, stack(0x00000000305b0000,0x00000000306b0000)]
+  0x000000003470b000 JavaThread "pool-1-thread-8" [_thread_blocked, id=15792, stack(0x0000000030480000,0x0000000030580000)]
+  0x0000000034729000 JavaThread "pool-1-thread-7" [_thread_blocked, id=18056, stack(0x000000002e0e0000,0x000000002e1e0000)]
+  0x000000002f102000 JavaThread "pool-1-thread-6" [_thread_blocked, id=19900, stack(0x000000002de50000,0x000000002df50000)]
+  0x000000002f0fc800 JavaThread "pool-1-thread-5" [_thread_blocked, id=18148, stack(0x000000000eea0000,0x000000000efa0000)]
+  0x00000000346f9800 JavaThread "pool-1-thread-4" [_thread_blocked, id=20704, stack(0x000000000dba0000,0x000000000dca0000)]
+  0x00000000346f6000 JavaThread "pool-1-thread-3" [_thread_blocked, id=2788, stack(0x000000000c670000,0x000000000c770000)]
+  0x0000000034714800 JavaThread "pool-1-thread-2" [_thread_blocked, id=17784, stack(0x000000000dcd0000,0x000000000ddd0000)]
+  0x000000000856f800 JavaThread "pool-1-thread-1" [_thread_blocked, id=20596, stack(0x000000000caa0000,0x000000000cba0000)]
+  0x000000000b454000 JavaThread "pool-2-thread-1" [_thread_blocked, id=17188, stack(0x000000000a4c0000,0x000000000a5c0000)]
+  0x000000000a803800 JavaThread "Coordinator" [_thread_in_native, id=15848, stack(0x000000000b0b0000,0x000000000b1b0000)]
+  0x0000000008485800 JavaThread "Service Thread" daemon [_thread_blocked, id=1556, stack(0x000000000a5f0000,0x000000000a6f0000)]
+  0x0000000008401000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=15972, stack(0x000000000a3c0000,0x000000000a4c0000)]
+  0x00000000083f6000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=19056, stack(0x000000000a140000,0x000000000a240000)]
+  0x00000000083f1800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=8632, stack(0x0000000009fd0000,0x000000000a0d0000)]
+  0x00000000083ea000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=16712, stack(0x0000000009a70000,0x0000000009b70000)]
+  0x00000000083de800 JavaThread "JDWP Command Reader" daemon [_thread_blocked, id=13472, stack(0x0000000009eb0000,0x0000000009fb0000)]
+  0x00000000083d6800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=13440, stack(0x0000000009d00000,0x0000000009e00000)]
+  0x00000000083ce800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=19748, stack(0x0000000009660000,0x0000000009760000)]
+  0x00000000083c7800 JavaThread "Attach Listener" daemon [_thread_blocked, id=20924, stack(0x0000000009960000,0x0000000009a60000)]
+  0x00000000083c6800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9208, stack(0x0000000009770000,0x0000000009870000)]
+  0x00000000071fd000 JavaThread "Finalizer" daemon [_thread_blocked, id=18140, stack(0x0000000009540000,0x0000000009640000)]
+  0x00000000071f6800 JavaThread "Reference Handler" daemon [_thread_blocked, id=18928, stack(0x0000000009430000,0x0000000009530000)]
+  0x000000000204e800 JavaThread "main" [_thread_blocked, id=20164, stack(0x0000000002a30000,0x0000000002b30000)]
+
+Other Threads:
+  0x0000000008372800 VMThread [stack: 0x0000000009300000,0x0000000009400000] [id=13304]
+  0x0000000008461000 WatcherThread [stack: 0x000000000a700000,0x000000000a800000] [id=17792]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000000020b8a00] Threads_lock - owner thread: 0x0000000008372800
+
+Heap:
+ PSYoungGen      total 2656256K, used 1216721K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2541568K, 46% used [0x0000000717400000,0x000000075f59f710,0x00000007b2600000)
+  from space 114688K, 30% used [0x00000007b9000000,0x00000007bb294f90,0x00000007c0000000)
+  to   space 108544K, 0% used [0x00000007b2600000,0x00000007b2600000,0x00000007b9000000)
+ ParOldGen       total 269312K, used 135752K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce092068,0x00000005d6300000)
+ Metaspace       used 25038K, capacity 25920K, committed 26032K, reserved 1073152K
+  class space    used 2694K, capacity 2891K, committed 2992K, reserved 1048576K
+
+Card table byte_map: [0x0000000003270000,0x0000000004250000] byte_map_base: 0x0000000000442000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000002954040
+ Begin Bits: [0x000000001e010000, 0x0000000025ea0000)
+ End Bits:   [0x0000000025ea0000, 0x000000002dd30000)
+
+Polling page: 0x0000000000450000
+
+CodeCache: size=245760Kb used=27389Kb max_used=28359Kb free=218370Kb
+ bounds [0x000000000f010000, 0x0000000010cc0000, 0x000000001e010000]
+ total_blobs=7822 nmethods=7412 adapters=329
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 178.931 Thread 0x0000000008401000 nmethod 10819 0x000000000ff34b50 code [0x000000000ff34ca0, 0x000000000ff34db0]
+Event: 178.931 Thread 0x0000000008401000 10820       1       org.netbeans.lib.profiler.wireprotocol.Response::yes (5 bytes)
+Event: 178.931 Thread 0x00000000083f6000 10823       4       java.io.ObjectOutputStream$BlockDataOutputStream::writeInt (46 bytes)
+Event: 178.931 Thread 0x0000000008401000 nmethod 10820 0x000000000ff76d50 code [0x000000000ff76ea0, 0x000000000ff76fb0]
+Event: 178.931 Thread 0x0000000008401000 10821       1       org.netbeans.lib.profiler.wireprotocol.Response::getErrorMessage (5 bytes)
+Event: 178.931 Thread 0x0000000008401000 nmethod 10821 0x00000000103196d0 code [0x0000000010319820, 0x0000000010319930]
+Event: 178.933 Thread 0x00000000083ea000 nmethod 10822 0x000000000f342a50 code [0x000000000f342ba0, 0x000000000f342e08]
+Event: 178.934 Thread 0x00000000083f6000 nmethod 10823 0x000000000f4aa710 code [0x000000000f4aa860, 0x000000000f4aab18]
+Event: 178.937 Thread 0x0000000008401000 10824       3       com.pervasive.datarush.graphs.internal.instancemodel.InputPortSnapshot::<init> (151 bytes)
+Event: 178.938 Thread 0x0000000008401000 nmethod 10824 0x000000000fa78b50 code [0x000000000fa78e80, 0x000000000fa7a848]
+
+GC Heap History (10 events):
+Event: 56.876 GC heap before
+{Heap before GC invocations=15 (full 1):
+ PSYoungGen      total 2015232K, used 2014563K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 1943040K, 100% used [0x0000000717400000,0x000000078dd80000,0x000000078dd80000)
+  from space 72192K, 99% used [0x000000078dd80000,0x0000000792358c90,0x0000000792400000)
+  to   space 84480K, 0% used [0x00000007bad80000,0x00000007bad80000,0x00000007c0000000)
+ ParOldGen       total 269312K, used 135480K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce04e048,0x00000005d6300000)
+ Metaspace       used 24230K, capacity 25050K, committed 25136K, reserved 1071104K
+  class space    used 2634K, capacity 2810K, committed 2864K, reserved 1048576K
+Event: 56.908 GC heap after
+Heap after GC invocations=15 (full 1):
+ PSYoungGen      total 2655744K, used 79540K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2571264K, 0% used [0x0000000717400000,0x0000000717400000,0x00000007b4300000)
+  from space 84480K, 94% used [0x00000007bad80000,0x00000007bfb2d328,0x00000007c0000000)
+  to   space 96768K, 0% used [0x00000007b4300000,0x00000007b4300000,0x00000007ba180000)
+ ParOldGen       total 269312K, used 135560K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce062058,0x00000005d6300000)
+ Metaspace       used 24230K, capacity 25050K, committed 25136K, reserved 1071104K
+  class space    used 2634K, capacity 2810K, committed 2864K, reserved 1048576K
+}
+Event: 67.584 GC heap before
+{Heap before GC invocations=16 (full 1):
+ PSYoungGen      total 2655744K, used 2650804K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2571264K, 100% used [0x0000000717400000,0x00000007b4300000,0x00000007b4300000)
+  from space 84480K, 94% used [0x00000007bad80000,0x00000007bfb2d328,0x00000007c0000000)
+  to   space 96768K, 0% used [0x00000007b4300000,0x00000007b4300000,0x00000007ba180000)
+ ParOldGen       total 269312K, used 135560K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce062058,0x00000005d6300000)
+ Metaspace       used 24354K, capacity 25216K, committed 25392K, reserved 1071104K
+  class space    used 2645K, capacity 2827K, committed 2864K, reserved 1048576K
+Event: 67.593 GC heap after
+Heap after GC invocations=16 (full 1):
+ PSYoungGen      total 2668032K, used 11776K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2571264K, 0% used [0x0000000717400000,0x0000000717400000,0x00000007b4300000)
+  from space 96768K, 12% used [0x00000007b4300000,0x00000007b4e80000,0x00000007ba180000)
+  to   space 95232K, 0% used [0x00000007ba300000,0x00000007ba300000,0x00000007c0000000)
+ ParOldGen       total 269312K, used 135664K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce07c068,0x00000005d6300000)
+ Metaspace       used 24354K, capacity 25216K, committed 25392K, reserved 1071104K
+  class space    used 2645K, capacity 2827K, committed 2864K, reserved 1048576K
+}
+Event: 74.075 GC heap before
+{Heap before GC invocations=17 (full 1):
+ PSYoungGen      total 2668032K, used 2581046K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2571264K, 99% used [0x0000000717400000,0x00000007b410dac0,0x00000007b4300000)
+  from space 96768K, 12% used [0x00000007b4300000,0x00000007b4e80000,0x00000007ba180000)
+  to   space 95232K, 0% used [0x00000007ba300000,0x00000007ba300000,0x00000007c0000000)
+ ParOldGen       total 269312K, used 135664K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce07c068,0x00000005d6300000)
+ Metaspace       used 24407K, capacity 25216K, committed 25392K, reserved 1071104K
+  class space    used 2646K, capacity 2827K, committed 2864K, reserved 1048576K
+Event: 74.105 GC heap after
+Heap after GC invocations=17 (full 1):
+ PSYoungGen      total 2642944K, used 87208K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2547712K, 0% used [0x0000000717400000,0x0000000717400000,0x00000007b2c00000)
+  from space 95232K, 91% used [0x00000007ba300000,0x00000007bf82a178,0x00000007c0000000)
+  to   space 108544K, 0% used [0x00000007b2c00000,0x00000007b2c00000,0x00000007b9600000)
+ ParOldGen       total 269312K, used 135736K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce08e068,0x00000005d6300000)
+ Metaspace       used 24407K, capacity 25216K, committed 25392K, reserved 1071104K
+  class space    used 2646K, capacity 2827K, committed 2864K, reserved 1048576K
+}
+Event: 86.953 GC heap before
+{Heap before GC invocations=18 (full 1):
+ PSYoungGen      total 2642944K, used 2634920K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2547712K, 100% used [0x0000000717400000,0x00000007b2c00000,0x00000007b2c00000)
+  from space 95232K, 91% used [0x00000007ba300000,0x00000007bf82a178,0x00000007c0000000)
+  to   space 108544K, 0% used [0x00000007b2c00000,0x00000007b2c00000,0x00000007b9600000)
+ ParOldGen       total 269312K, used 135736K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce08e068,0x00000005d6300000)
+ Metaspace       used 24513K, capacity 25344K, committed 25392K, reserved 1071104K
+  class space    used 2649K, capacity 2827K, committed 2864K, reserved 1048576K
+Event: 86.977 GC heap after
+Heap after GC invocations=18 (full 1):
+ PSYoungGen      total 2622464K, used 74257K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2547712K, 0% used [0x0000000717400000,0x0000000717400000,0x00000007b2c00000)
+  from space 74752K, 99% used [0x00000007b2c00000,0x00000007b7484668,0x00000007b7500000)
+  to   space 114688K, 0% used [0x00000007b9000000,0x00000007b9000000,0x00000007c0000000)
+ ParOldGen       total 269312K, used 135744K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce090068,0x00000005d6300000)
+ Metaspace       used 24513K, capacity 25344K, committed 25392K, reserved 1071104K
+  class space    used 2649K, capacity 2827K, committed 2864K, reserved 1048576K
+}
+Event: 176.936 GC heap before
+{Heap before GC invocations=19 (full 1):
+ PSYoungGen      total 2622464K, used 2621969K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2547712K, 100% used [0x0000000717400000,0x00000007b2c00000,0x00000007b2c00000)
+  from space 74752K, 99% used [0x00000007b2c00000,0x00000007b7484668,0x00000007b7500000)
+  to   space 114688K, 0% used [0x00000007b9000000,0x00000007b9000000,0x00000007c0000000)
+ ParOldGen       total 269312K, used 135744K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce090068,0x00000005d6300000)
+ Metaspace       used 25029K, capacity 25920K, committed 26032K, reserved 1073152K
+  class space    used 2694K, capacity 2891K, committed 2992K, reserved 1048576K
+Event: 176.951 GC heap after
+Heap after GC invocations=19 (full 1):
+ PSYoungGen      total 2656256K, used 35411K [0x0000000717400000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 2541568K, 0% used [0x0000000717400000,0x0000000717400000,0x00000007b2600000)
+  from space 114688K, 30% used [0x00000007b9000000,0x00000007bb294f90,0x00000007c0000000)
+  to   space 108544K, 0% used [0x00000007b2600000,0x00000007b2600000,0x00000007b9000000)
+ ParOldGen       total 269312K, used 135752K [0x00000005c5c00000, 0x00000005d6300000, 0x0000000717400000)
+  object space 269312K, 50% used [0x00000005c5c00000,0x00000005ce092068,0x00000005d6300000)
+ Metaspace       used 25029K, capacity 25920K, committed 26032K, reserved 1073152K
+  class space    used 2694K, capacity 2891K, committed 2992K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 176.636 Thread 0x00000000346fd800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000010c1a484 method=java.util.Arrays.equals([I[I)Z @ 23
+Event: 176.658 Thread 0x00000000346fd800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000fc2ca10 method=java.util.Arrays.equals([I[I)Z @ 41
+Event: 177.687 Thread 0x00000000346fc000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000f7fa3d8 method=java.io.ObjectOutputStream$BlockDataOutputStream.writeInt(I)V @ 9
+Event: 177.721 Thread 0x00000000346fc000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000febf888 method=java.io.ObjectOutputStream$BlockDataOutputStream.writeShort(I)V @ 9
+Event: 177.721 Thread 0x00000000346fc000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000f2fd824 method=java.io.DataOutputStream.writeShort(I)V @ 12
+Event: 177.722 Thread 0x00000000346fc000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000fb5bb40 method=java.io.ObjectOutputStream$BlockDataOutputStream.writeShort(I)V @ 9
+Event: 177.722 Thread 0x00000000346fc000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000f2fd824 method=java.io.DataOutputStream.writeShort(I)V @ 12
+Event: 177.724 Thread 0x00000000346fc000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000f2fd824 method=java.io.DataOutputStream.writeShort(I)V @ 12
+Event: 178.431 Thread 0x000000000bbeb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00000000102b7da0 method=java.io.ObjectInputStream$PeekInputStream.read([BII)I @ 50
+Event: 178.432 Thread 0x00000000627ef000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00000000102b7da0 method=java.io.ObjectInputStream$PeekInputStream.read([BII)I @ 50
+
+Internal exceptions (10 events):
+Event: 52.528 Thread 0x0000000032348800 Implicit null exception at 0x00000000102ef8a7 to 0x00000000102f9421
+Event: 56.584 Thread 0x000000003471d800 NullPointerException in IC check 0x000000000f443b20
+Event: 56.584 Thread 0x000000003471d800 Exception <a 'java/lang/NullPointerException'> (0x00000007723f7910) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 56.951 Thread 0x000000002f19d000 Implicit null exception at 0x000000001069e53c to 0x00000000106a8dc9
+Event: 61.117 Thread 0x0000000034705000 Implicit null exception at 0x0000000010695372 to 0x0000000010695ce3
+Event: 61.117 Thread 0x0000000034705000 Exception <a 'java/lang/NullPointerException'> (0x0000000762db9a60) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 67.712 Thread 0x000000002f127800 Implicit null exception at 0x0000000010695372 to 0x0000000010695ce3
+Event: 67.712 Thread 0x000000002f127800 Exception <a 'java/lang/NullPointerException'> (0x000000071fbda800) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 131.228 Thread 0x00000000083c7800 Implicit null exception at 0x000000000f9a4c35 to 0x000000000f9a600d
+Event: 131.234 Thread 0x00000000346fd800 Implicit null exception at 0x000000000fb5e647 to 0x000000000fb5ecf1
+
+Events (10 events):
+Event: 178.932 Thread 0x000000002ecca000 Thread exited: 0x000000002ecca000
+Event: 178.932 Thread 0x000000002e2ec800 Thread exited: 0x000000002e2ec800
+Event: 178.932 Thread 0x0000000060a1d000 Thread exited: 0x0000000060a1d000
+Event: 178.932 Thread 0x000000000dffb000 Thread exited: 0x000000000dffb000
+Event: 178.932 Thread 0x000000000cdef800 Thread exited: 0x000000000cdef800
+Event: 178.932 Thread 0x000000002e56d000 Thread exited: 0x000000002e56d000
+Event: 178.932 Thread 0x000000003181a000 Thread exited: 0x000000003181a000
+Event: 178.932 Thread 0x0000000032826000 Thread exited: 0x0000000032826000
+Event: 178.938 Executing VM operation: GetAllStackTraces
+Event: 178.948 Executing VM operation: GetAllStackTraces done
+
+
+Dynamic libraries:
+0x000000013f160000 - 0x000000013f197000 	C:\Program Files\Java\jdk1.8.0_45\bin\java.exe
+0x00000000776b0000 - 0x0000000077858000 	C:\windows\SYSTEM32\ntdll.dll
+0x0000000077490000 - 0x00000000775af000 	C:\windows\system32\kernel32.dll
+0x000007fefd6b0000 - 0x000007fefd71c000 	C:\windows\system32\KERNELBASE.dll
+0x0000000075180000 - 0x0000000075208000 	C:\windows\System32\SYSFER.DLL
+0x000007fefdb10000 - 0x000007fefdbeb000 	C:\windows\system32\ADVAPI32.dll
+0x000007fefee40000 - 0x000007fefeedf000 	C:\windows\system32\msvcrt.dll
+0x000007fefdc10000 - 0x000007fefdc2f000 	C:\windows\SYSTEM32\sechost.dll
+0x000007fefef90000 - 0x000007feff0bd000 	C:\windows\system32\RPCRT4.dll
+0x00000000775b0000 - 0x00000000776aa000 	C:\windows\system32\USER32.dll
+0x000007feff480000 - 0x000007feff4e7000 	C:\windows\system32\GDI32.dll
+0x000007feff0c0000 - 0x000007feff0ce000 	C:\windows\system32\LPK.dll
+0x000007fefd830000 - 0x000007fefd8f9000 	C:\windows\system32\USP10.dll
+0x000007fefbf70000 - 0x000007fefc164000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18807_none_fa381d5f175bfb52\COMCTL32.dll
+0x000007fefdf90000 - 0x000007fefe001000 	C:\windows\system32\SHLWAPI.dll
+0x000007fefef60000 - 0x000007fefef8e000 	C:\windows\system32\IMM32.DLL
+0x000007fefde80000 - 0x000007fefdf89000 	C:\windows\system32\MSCTF.dll
+0x000007fefd3a0000 - 0x000007fefd3d1000 	C:\windows\system32\nvinitx.dll
+0x000000000f000000 - 0x000000000f006000 	C:\Program Files\NVIDIA Corporation\CoProcManager\detoured.dll
+0x000007fef8270000 - 0x000007fef82a2000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvd3d9wrapx.dll
+0x000007feff6e0000 - 0x000007feff8b7000 	C:\windows\system32\SETUPAPI.dll
+0x000007fefd4b0000 - 0x000007fefd4e6000 	C:\windows\system32\CFGMGR32.dll
+0x000007feff0d0000 - 0x000007feff1a7000 	C:\windows\system32\OLEAUT32.dll
+0x000007fefd900000 - 0x000007fefdb03000 	C:\windows\system32\ole32.dll
+0x000007fefd520000 - 0x000007fefd53a000 	C:\windows\system32\DEVOBJ.dll
+0x000007fef8240000 - 0x000007fef8262000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvdxgiwrapx.dll
+0x00000000531c0000 - 0x0000000053292000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\msvcr100.dll
+0x0000000002150000 - 0x00000000029d3000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\server\jvm.dll
+0x000007fef62a0000 - 0x000007fef62a9000 	C:\windows\system32\WSOCK32.dll
+0x000007feff4f0000 - 0x000007feff53d000 	C:\windows\system32\WS2_32.dll
+0x000007feff6d0000 - 0x000007feff6d8000 	C:\windows\system32\NSI.dll
+0x000007fefaf40000 - 0x000007fefaf7b000 	C:\windows\system32\WINMM.dll
+0x000007fefc670000 - 0x000007fefc67c000 	C:\windows\system32\VERSION.dll
+0x0000000077880000 - 0x0000000077887000 	C:\windows\system32\PSAPI.DLL
+0x000000006f3f0000 - 0x000000006f3ff000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\verify.dll
+0x0000000054740000 - 0x0000000054769000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\java.dll
+0x000000006dc30000 - 0x000000006dc65000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\jdwp.dll
+0x000000006dc20000 - 0x000000006dc28000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\npt.dll
+0x0000000054ed0000 - 0x0000000054ee6000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\zip.dll
+0x000007fefe0b0000 - 0x000007fefee38000 	C:\windows\system32\SHELL32.dll
+0x000007fefd470000 - 0x000007fefd47f000 	C:\windows\system32\profapi.dll
+0x000000006dc10000 - 0x000000006dc19000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\dt_socket.dll
+0x000007fefcbb0000 - 0x000007fefcc05000 	C:\windows\system32\mswsock.dll
+0x000007fefc590000 - 0x000007fefc597000 	C:\windows\System32\wshtcpip.dll
+0x000000006f3d0000 - 0x000000006f3dd000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\management.dll
+0x0000000054720000 - 0x000000005473a000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\net.dll
+0x000007fefcba0000 - 0x000007fefcba7000 	C:\windows\System32\wship6.dll
+0x00000000552a0000 - 0x00000000552b1000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\nio.dll
+0x0000000054620000 - 0x0000000054644000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\sunec.dll
+0x000007fefb2b0000 - 0x000007fefb2c5000 	C:\windows\system32\NLAapi.dll
+0x000007fef2ad0000 - 0x000007fef2ae5000 	C:\windows\system32\napinsp.dll
+0x000007fef2b70000 - 0x000007fef2b89000 	C:\windows\system32\pnrpnsp.dll
+0x000007fefca30000 - 0x000007fefca8b000 	C:\windows\system32\DNSAPI.dll
+0x000007fef2ac0000 - 0x000007fef2acb000 	C:\windows\System32\winrnr.dll
+0x000007fef2ab0000 - 0x000007fef2ac0000 	C:\windows\system32\wshbth.dll
+0x000007fefb5d0000 - 0x000007fefb5f7000 	C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb5c0000 - 0x000007fefb5cb000 	C:\windows\system32\WINNSI.DLL
+0x000007fef2bc0000 - 0x000007fef2bc8000 	C:\windows\system32\rasadhlp.dll
+0x000007fefa3e0000 - 0x000007fefa433000 	C:\windows\System32\fwpuclnt.dll
+0x000007fefcc50000 - 0x000007fefcc67000 	C:\windows\system32\CRYPTSP.dll
+0x000007fefc910000 - 0x000007fefc957000 	C:\windows\system32\rsaenh.dll
+0x000007fefd760000 - 0x000007fefd77e000 	C:\windows\system32\USERENV.dll
+0x000007fefd2d0000 - 0x000007fefd2df000 	C:\windows\system32\CRYPTBASE.dll
+0x000007fefa610000 - 0x000007fefa621000 	C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefa590000 - 0x000007fefa5a8000 	C:\windows\system32\dhcpcsvc.DLL
+0x000000006a320000 - 0x000000006a343000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\instrument.dll
+0x000007fefa900000 - 0x000007fefa90f000 	C:\Program Files\NetBeans 8.0.2\profiler\lib\deployed\jdk16\windows-amd64\profilerinterface.dll
+0x000007feec410000 - 0x000007feec535000 	C:\windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=58202 
+java_command: com.actian.services.dataflow.launcher.LauncherMain
+java_class_path (initial): C:\Users\utlia01\NetBeansProjects\AAProject\DataflowLauncher\target\classes;C:\Users\utlia01\.m2\repository\com\pervasive\datarush\datarush-library\6.5.1.112\datarush-library-6.5.1.112.jar;C:\Users\utlia01\.m2\repository\com\pervasive\datarush\datarush-commons\6.5.1.112\datarush-commons-6.5.1.112.jar;C:\Users\utlia01\.m2\repository\com\pervasive\datarush\datarush-cluster\6.5.1.112\datarush-cluster-6.5.1.112.jar;C:\Users\utlia01\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\utlia01\NetBeansProjects\AAExtensions\DataflowExtensions\target\classes;C:\Users\utlia01\.m2\repository\com\ingres\jdbc\iijdbc\10.0-4.0.6\iijdbc-10.0-4.0.6.jar;C:\Users\utlia01\.m2\repository\joda-time\joda-time\2.8\joda-time-2.8.jar;C:\Users\utlia01\.m2\repository\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;C:\Users\utlia01\.m2\repository\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;C:\Users\utlia01\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\utlia01\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\utlia01\.m2\repository\org\apache\felix\org.osgi.core\1.4.0\org.osgi.core-1.4.0.jar;C:\Users\utlia01\.m2\repository\org\apache\felix\org.osgi.compendium\1.4.0\org.osgi.compendium-1.4.0.jar;C:\Users\utlia01\.m2\repository\org\apache\felix\javax.servlet\1.0.0\javax.servlet-1.0.0.jar;C:\Users\utlia01\.m2\repository\org\apache\felix\org.osgi.foundation\1.2.0\org.osgi.foundation-1.2.0.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_45
+PATH=C:\Program Files (x86)\Ingres\or62xc\ingres\bin\;C:\Program Files (x86)\Ingres\or62xc\ingres\utility\;C:\Actian\VectorVW\ingres\bin;C:\Actian\VectorVW\ingres\utility;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Lenovo\Fingerprint Manager Pro\;C:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\
+USERNAME=utlia01
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.18798)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 33170940k(20742228k free), swap 66340028k(42162248k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.45-b02) for windows-amd64 JRE (1.8.0_45-b15), built on Apr 30 2015 12:40:44 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Jun 18 17:09:52 2015
+elapsed time: 179 seconds (0d 0h 2m 59s)
+
